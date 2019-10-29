@@ -12,6 +12,11 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AcroniLibrary.FirebaseData;
+using FireSharp.Response;
+using FireSharp.Interfaces;
+using FireSharp.Config;
+
 
 namespace AcroniUI
 {
@@ -21,6 +26,19 @@ namespace AcroniUI
         int countHeightCollection = 0;
         int countWidthKeyboard = 0;
         bool selectMode;
+
+        #region Firebase instances
+
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "SkeKuTHfj9sk7hZbKB91MTgcsvCzGw54M7timKeA",
+            BasePath = "https://analytics-7777.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+        #endregion
+
+
         void Splash()
         {
             Application.Run(new Splash());
@@ -169,7 +187,15 @@ namespace AcroniUI
             (sender as Panel).BackColor = Color.FromArgb(255, (sender as Panel).BackColor.R, (sender as Panel).BackColor.G, (sender as Panel).BackColor.B);
         }
 
-        private void btnAdicionarGaleria_Click(object sender, EventArgs e)
+        private string getActualMonth()
+        {
+            int nMes = DateTime.Today.Month;
+            string[] meses = new string[12] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
+            "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+            return meses[nMes - 1];
+        }
+
+        private async void btnAdicionarGaleria_Click(object sender, EventArgs e)
         {
             short contcollections = 0;
             if (!Share.User.isPremiumAccount)
@@ -228,6 +254,66 @@ namespace AcroniUI
                     Share.KeyboardsQuantity = 0;
                     Share.Collection.CollectionName = "";
                     Share.Keyboard.Name = "";
+
+
+                    #region Relatório global Firebase
+                    // Estratégia: apenas dar um patch nos dados existentes
+                    // Pega-se o valor anterior e incrementa-o por mais um
+
+                    // Gerando um cliente que será o objeto conexão usando a chave do banco
+                    client = new FireSharp.FirebaseClient(config);
+
+
+                    if (Share.User.isPremiumAccount)
+                    {
+                        FirebaseResponse responseGlobal = await client.
+                            GetAsync("/relatoriosGlobais/desktop");
+                        GlobalData previousGlobal = responseGlobal.ResultAs<GlobalData>();
+
+
+                        var relatorioGlobal = new GlobalData
+                        {
+                            tecladosProduzidosPorUsuariosPremium = ++previousGlobal.tecladosProduzidosPorUsuariosPremium
+                        };
+
+                        await client.UpdateAsync("/relatoriosGlobais/desktop", relatorioGlobal);
+
+                    }
+                    #endregion
+
+                    #region Relatórios de uso mensal
+
+                    try
+                    {
+                        FirebaseResponse response = await client.
+                        GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year);
+
+                        try
+                        {
+                            response = await client.GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth());
+                            MensalData previousMensal = response.ResultAs<MensalData>();
+                            var relatorioMensal = new MensalData
+                            {
+                                qntTecladosProduzidosPorMes = ++previousMensal.qntTecladosProduzidosPorMes
+                            };
+
+                            await client.UpdateAsync("relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
+                        }
+                        catch (SqlException ex)
+                        {
+                            // Geração do POST: crie o mês que não existe com o getActualMonth e com a qntTeclados = 1
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        //Geração do POST: crie o ano que não existe com o mês atual e com a qntTeclados = 1
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+                    #endregion
+
                 }
 
             }

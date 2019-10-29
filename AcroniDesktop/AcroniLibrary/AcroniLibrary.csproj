@@ -81,6 +81,10 @@
     <Compile Include="FileInfo\KeyboardIcons.cs" />
     <Compile Include="FileInfo\Share.cs" />
     <Compile Include="CustomizingMethods\FormManipulator.cs" />
+    <Compile Include="FirebaseData\Ano.cs" />
+    <Compile Include="FirebaseData\GlobalData.cs" />
+    <Compile Include="FirebaseData\MensalData.cs" />
+    <Compile Include="FirebaseData\Mes.cs" />
     <Compile Include="SQL\SQLConnection.cs" />
     <Compile Include="CustomizingMethods\Colorpicker\ColorpickerHandlers.cs" />
     <Compile Include="CustomizingMethods\Colorpicker\SetColorpickerVisibility.cs" />
@@ -99,5 +103,6 @@
     <Compile Include="SQL\SQLProcMethods.cs" />
     <Compile Include="Validator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

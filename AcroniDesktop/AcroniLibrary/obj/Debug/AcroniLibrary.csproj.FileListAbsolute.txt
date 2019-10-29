@@ -35,3 +35,11 @@ C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniLibrary\
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.csproj.CopyComplete
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.dll
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.pdb
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\bin\Debug\AcroniLibrary.dll
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\bin\Debug\AcroniLibrary.pdb
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.csprojAssemblyReference.cache
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.csproj.CoreCompileInputs.cache
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.csproj.CopyComplete
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.dll
+C:\Users\gui_m\Documents\GitHub\Last-Commit\AcroniKeyboards\AcroniDesktop\AcroniLibrary\obj\Debug\AcroniLibrary.pdb
