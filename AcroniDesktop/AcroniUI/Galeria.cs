@@ -195,7 +195,7 @@ namespace AcroniUI
             return meses[nMes - 1];
         }
 
-        private async void btnAdicionarGaleria_Click(object sender, EventArgs e)
+        private void btnAdicionarGaleria_Click(object sender, EventArgs e)
         {
             short contcollections = 0;
             if (!Share.User.isPremiumAccount)
@@ -223,7 +223,7 @@ namespace AcroniUI
                     newCollection.CollectionColor = Color.DimGray;
 
                     Share.User.UserCollections.Add(newCollection);
-                    
+
                     Share.Collection.CollectionName = newCollection.CollectionName;
 
                     AcroniControls.CollectionUI collectionUi = new AcroniControls.CollectionUI();
@@ -256,63 +256,7 @@ namespace AcroniUI
                     Share.Keyboard.Name = "";
 
 
-                    #region Relatório global Firebase
-                    // Estratégia: apenas dar um patch nos dados existentes
-                    // Pega-se o valor anterior e incrementa-o por mais um
-
-                    // Gerando um cliente que será o objeto conexão usando a chave do banco
-                    client = new FireSharp.FirebaseClient(config);
-
-
-                    if (Share.User.isPremiumAccount)
-                    {
-                        FirebaseResponse responseGlobal = await client.
-                            GetAsync("/relatoriosGlobais/desktop");
-                        GlobalData previousGlobal = responseGlobal.ResultAs<GlobalData>();
-
-
-                        var relatorioGlobal = new GlobalData
-                        {
-                            tecladosProduzidosPorUsuariosPremium = ++previousGlobal.tecladosProduzidosPorUsuariosPremium
-                        };
-
-                        await client.UpdateAsync("/relatoriosGlobais/desktop", relatorioGlobal);
-
-                    }
-                    #endregion
-
-                    #region Relatórios de uso mensal
-
-                    try
-                    {
-                        FirebaseResponse response = await client.
-                        GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year);
-
-                        try
-                        {
-                            response = await client.GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth());
-                            MensalData previousMensal = response.ResultAs<MensalData>();
-                            var relatorioMensal = new MensalData
-                            {
-                                qntTecladosProduzidosPorMes = ++previousMensal.qntTecladosProduzidosPorMes
-                            };
-
-                            await client.UpdateAsync("relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
-                        }
-                        catch (SqlException ex)
-                        {
-                            // Geração do POST: crie o mês que não existe com o getActualMonth e com a qntTeclados = 1
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                    catch (SqlException ex)
-                    {
-                        //Geração do POST: crie o ano que não existe com o mês atual e com a qntTeclados = 1
-                        MessageBox.Show(ex.Message);
-                    }
-
-
-                    #endregion
+                    DataAnalyticalSender();
 
                 }
 
@@ -323,6 +267,69 @@ namespace AcroniUI
                                                        "pode criar usando essa conta.", "Atualize sua conta agora mesmo para uma conta Premium");
                 mb.ShowDialog();
             }
+        }
+
+        private async void DataAnalyticalSender()
+        {
+            #region Relatório global Firebase
+            // Estratégia: apenas dar um patch nos dados existentes
+            // Pega-se o valor anterior e incrementa-o por mais um
+
+            // Gerando um cliente que será o objeto conexão usando a chave do banco
+            client = new FireSharp.FirebaseClient(config);
+
+
+            if (Share.User.isPremiumAccount)
+            {
+                FirebaseResponse responseGlobal = await client.
+                    GetAsync("/relatoriosGlobais/desktop");
+                GlobalData previousGlobal = responseGlobal.ResultAs<GlobalData>();
+
+
+                var relatorioGlobal = new GlobalData
+                {
+                    tecladosProduzidosPorUsuariosPremium = ++previousGlobal.tecladosProduzidosPorUsuariosPremium
+                };
+
+                await client.UpdateAsync("/relatoriosGlobais/desktop", relatorioGlobal);
+
+            }
+            #endregion
+
+            try
+            {
+                FirebaseResponse response = await client.
+                GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year);
+
+                try
+                {
+                    response = await client.GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth());
+                    MensalData previousMensal = response.ResultAs<MensalData>();
+                    var relatorioMensal = new MensalData
+                    {
+                        qntTecladosProduzidosPorMes = ++previousMensal.qntTecladosProduzidosPorMes
+                    };
+
+                    await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
+                }
+                catch (SqlException ex)
+                {
+                    var mes = new Mes
+                    {
+                        mes = getActualMonth()
+                    };
+                    await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year, mes);
+                }
+            }
+            catch (SqlException ex)
+            {
+                var ano = new Ano
+                {
+                    ano = DateTime.Today.Year
+                };
+                await client.UpdateAsync("/relatoriosMensais/desktop/", ano);
+            }
+
         }
 
         private void Exclude(object sender, EventArgs e)
@@ -382,7 +389,7 @@ namespace AcroniUI
                                     Form editarTeclado = null;
                                     Share.EditKeyboard = true;
                                     Share.Collection.CollectionName = keyBoardGallery.CollectionName;
-                                        editarTeclado = new Compacto();
+                                    editarTeclado = new Compacto();
                                     editarTeclado.Show();
                                     this.Close();
                                     break;
@@ -429,7 +436,7 @@ namespace AcroniUI
                                         if (!string.IsNullOrEmpty(selectColor.CollectionName))
                                         {
                                             List<Object> id = SQLProcMethods.SELECT_IdColecao(collection.CollectionName, Share.User.ID);
-                                            SQLProcMethods.UPDATE_Colecao(selectColor.CollectionName, Share.User.ID, (int)id[0]) ;
+                                            SQLProcMethods.UPDATE_Colecao(selectColor.CollectionName, Share.User.ID, (int)id[0]);
                                             collection.CollectionName = selectColor.CollectionName;
                                         }
                                         Share.User.SendToFile();
