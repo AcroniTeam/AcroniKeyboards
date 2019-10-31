@@ -47,6 +47,9 @@
             this.btnOpenFullSize.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnMax
+            // 
+            // 
             // btnOpenCompacto
             // 
             this.btnOpenCompacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(44)))));
@@ -67,7 +70,7 @@
             this.lblCompacto.ForeColor = System.Drawing.Color.White;
             this.lblCompacto.Location = new System.Drawing.Point(355, 84);
             this.lblCompacto.Name = "lblCompacto";
-            this.lblCompacto.Size = new System.Drawing.Size(230, 52);
+            this.lblCompacto.Size = new System.Drawing.Size(256, 57);
             this.lblCompacto.TabIndex = 5;
             this.lblCompacto.Text = "Compacto";
             this.lblCompacto.Click += new System.EventHandler(this.picBoxCompacto_Click);
@@ -120,7 +123,7 @@
             this.lblTenkeyless.ForeColor = System.Drawing.Color.White;
             this.lblTenkeyless.Location = new System.Drawing.Point(351, 88);
             this.lblTenkeyless.Name = "lblTenkeyless";
-            this.lblTenkeyless.Size = new System.Drawing.Size(254, 52);
+            this.lblTenkeyless.Size = new System.Drawing.Size(285, 57);
             this.lblTenkeyless.TabIndex = 3;
             this.lblTenkeyless.Text = "Tenkeyless";
             // 
@@ -158,7 +161,7 @@
             this.lblFullSize.ForeColor = System.Drawing.Color.White;
             this.lblFullSize.Location = new System.Drawing.Point(388, 96);
             this.lblFullSize.Name = "lblFullSize";
-            this.lblFullSize.Size = new System.Drawing.Size(180, 52);
+            this.lblFullSize.Size = new System.Drawing.Size(203, 57);
             this.lblFullSize.TabIndex = 1;
             this.lblFullSize.Text = "Fullsize";
             this.lblFullSize.Click += new System.EventHandler(this.picBoxOpenFullSize_Click);

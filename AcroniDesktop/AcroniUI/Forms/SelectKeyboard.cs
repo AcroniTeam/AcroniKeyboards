@@ -100,6 +100,5 @@ namespace AcroniUI
             compacto.Show();
             this.Close();
         }
-
     }
 }

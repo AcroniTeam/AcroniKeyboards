@@ -312,7 +312,7 @@ namespace AcroniUI
 
                     await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
                 }
-                catch (SqlException ex)
+                catch (Exception)
                 {
                     var mes = new Mes
                     {
@@ -321,7 +321,7 @@ namespace AcroniUI
                     await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year, mes);
                 }
             }
-            catch (SqlException ex)
+            catch (Exception)
             {
                 var ano = new Ano
                 {

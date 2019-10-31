@@ -68,11 +68,11 @@
             // btnMax
             // 
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
+            this.btnMax.Image = global::AcroniUI.Properties.Resources.maximize;
             this.btnMax.Location = new System.Drawing.Point(1139, 0);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(42, 30);
-            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMax.TabIndex = 15;
             this.btnMax.TabStop = false;
             // 
@@ -123,7 +123,7 @@
             this.lblAcroni.ForeColor = System.Drawing.Color.White;
             this.lblAcroni.Location = new System.Drawing.Point(9, 6);
             this.lblAcroni.Name = "lblAcroni";
-            this.lblAcroni.Size = new System.Drawing.Size(80, 26);
+            this.lblAcroni.Size = new System.Drawing.Size(87, 29);
             this.lblAcroni.TabIndex = 2;
             this.lblAcroni.Text = "Acroni";
             // 
@@ -219,6 +219,7 @@
             this.Controls.Add(this.pnlArquivos);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Template";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

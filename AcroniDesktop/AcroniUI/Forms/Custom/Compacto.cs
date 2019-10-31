@@ -95,6 +95,11 @@ namespace AcroniUI.Custom
                 pnlHeadColorpicker.Location = new Point(915, (this.Height - pnlHeadColorpicker.Height - pnlBodyColorpicker.Height) / 2);
                 apnlCustomOptionsLeft.Location = new Point(0, 0);
                 apnlCustomOptionsRight.Location = new Point(878, 0);
+                picBoxKeyboardBackground.Location = new Point(
+                    this.Width - picBoxKeyboardBackground.Width / 2 - pnlBodyColorpicker.Width,
+                    this.Height - picBoxKeyboardBackground.Height / 2 - (pnlCustomizingMenu.Height + 40)
+
+                    );
             }
             else
             {

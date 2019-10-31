@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using AcroniLibrary.DesignMethods;
 using AcroniControls;
-using AcroniLibrary.FileInfo;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace AcroniUI
 {

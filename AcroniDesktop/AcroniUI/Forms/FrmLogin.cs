@@ -25,6 +25,7 @@ namespace AcroniUI.LoginAndSignUp
         public FrmLogin()
         {
             InitializeComponent();
+            //FontResource.Add();
         }
 
         #region Ações dos botões do menuStrip
@@ -187,7 +188,7 @@ namespace AcroniUI.LoginAndSignUp
             }
             else showLoginErrorlabel("Este usuário não existe.");
 
-            if(spl.IsAlive)
+            if (spl.IsAlive)
                 spl.Abort();
             btnEntrar.Enabled = true;
         }
@@ -265,7 +266,7 @@ namespace AcroniUI.LoginAndSignUp
                 txtCadRepPass.isPassword = true;
         }
 
-        private void txtBoxesCad_OnValueChanged(object sender, EventArgs e) { pnlShowCadError.Location = new Point(94, 508);  lblAvisoCad.Visible = false; }
+        private void txtBoxesCad_OnValueChanged(object sender, EventArgs e) { pnlShowCadError.Location = new Point(94, 508); lblAvisoCad.Visible = false; }
 
         private void ChangeMessagelblAviso(String message)
         {
@@ -398,7 +399,8 @@ namespace AcroniUI.LoginAndSignUp
                     apnlCPF.CreateGraphics().Clear(Color.FromArgb(44, 47, 55));
                 }
 
-            }else if (textbox.Equals(txtCadPass))
+            }
+            else if (textbox.Equals(txtCadPass))
             {
                 PasswordType passwordStrengh = Validator.CheckPasswordLevel(txtCadPass.Text);
                 if (passwordStrengh.Equals(PasswordType.VERY_WEAK))
@@ -443,10 +445,10 @@ namespace AcroniUI.LoginAndSignUp
             txtCadPass.Text = "teste";
             txtCadUser.Text = "Teste dos Santos";
             txtCadRepPass.Text = "teste";
-            //btnCadastrar_Click(default(object), default(EventArgs));
-            //txtEntrar.Text = "teste";
-            //txtSenha.Text = "teste";
-            //btnEntrar_Click(default(object), default(EventArgs));
+            btnCadastrar_Click(default(object), default(EventArgs));
+            txtEntrar.Text = "teste";
+            txtSenha.Text = "teste";
+            btnEntrar_Click(default(object), default(EventArgs));
         }
 
         #region FadeIn e FadeOut
