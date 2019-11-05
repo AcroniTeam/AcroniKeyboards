@@ -21,11 +21,10 @@ namespace AcroniUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Thread.CurrentThread.SetApartmentState(ApartmentState.Unknown);
-            //SQLProcMethods.createProceduresSelect();
-            if (File.Exists($@"{Application.StartupPath}\Users\{SQLConnection.nome_usuario}.acr"))
-                Application.Run(new SelectKeyboard());
+            if (Environment.MachineName.Equals("NPIKDNINK"))
+                Application.Run(new Compacto());
             else
-                Application.Run(new FrmLogin());
+                Application.Run(new LoginAndSignUp.FrmLogin());
         }
     }
 }
