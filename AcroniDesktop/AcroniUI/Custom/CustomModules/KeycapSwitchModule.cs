@@ -25,7 +25,6 @@ namespace AcroniUI.Custom.CustomModules
             switch (Switch)
             {
                 case 1:
-
                     picswitch1.Tag = "Chosen";
                     pnlBtnIconChosen.Visible = true;
                     pnlBtnIconChosen.Location = new Point(picswitch1.Location.X + picswitch1.Size.Width - 10, picswitch1.Location.Y + picswitch1.Size.Height - 10);
@@ -57,8 +56,9 @@ namespace AcroniUI.Custom.CustomModules
                     break;
 
             }
+            chosenSwitch = Switch;
         }
-        public KeycapSwitchModule(string keybuttonName)
+        public KeycapSwitchModule(string keybuttonName,short switche)
         {
             InitializeComponent();
             this.keybuttonName = keybuttonName;

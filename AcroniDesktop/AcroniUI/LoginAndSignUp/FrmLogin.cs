@@ -278,7 +278,7 @@ namespace AcroniUI.LoginAndSignUp
         {
             Share.User = new User();
 
-            using (FileStream savearchive = new FileStream($@"{Application.StartupPath}\Users\{txtEntrar.Text}.acr", FileMode.Create))
+            using (FileStream savearchive = new FileStream($@"{Application.StartupPath}\Users\{txtEntrar.Text}.acr", FileMode.OpenOrCreate))
             {
                 BinaryFormatter Serializer = new BinaryFormatter();
                 Serializer.Serialize(savearchive, Share.User);

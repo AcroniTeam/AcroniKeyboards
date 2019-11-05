@@ -123,7 +123,6 @@ C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\D
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Splash.resources
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Template.resources
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.csproj.GenerateResource.cache
-C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.csproj.CopyComplete
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.exe
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.pdb

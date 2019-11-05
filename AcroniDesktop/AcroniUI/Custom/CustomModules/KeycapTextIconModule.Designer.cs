@@ -67,6 +67,7 @@
             this.lnkRedefineIcons = new System.Windows.Forms.LinkLabel();
             this.ebtnNewIcon = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.epnlIcons = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.lblDeleteIcon = new System.Windows.Forms.LinkLabel();
             this.apnlTextbox1.SuspendLayout();
             this.apnlTextbox2.SuspendLayout();
             this.apnlTextbox3.SuspendLayout();
@@ -86,33 +87,36 @@
             // alblUpperText
             // 
             this.alblUpperText.AutoSize = true;
-            this.alblUpperText.Font = new System.Drawing.Font("Open Sans", 14.75F);
+            this.alblUpperText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
             this.alblUpperText.ForeColor = System.Drawing.Color.White;
-            this.alblUpperText.Location = new System.Drawing.Point(196, 52);
+            this.alblUpperText.Location = new System.Drawing.Point(261, 64);
+            this.alblUpperText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alblUpperText.Name = "alblUpperText";
-            this.alblUpperText.Size = new System.Drawing.Size(101, 27);
+            this.alblUpperText.Size = new System.Drawing.Size(121, 29);
             this.alblUpperText.TabIndex = 0;
             this.alblUpperText.Text = "Upperkey";
             // 
             // alblText
             // 
             this.alblText.AutoSize = true;
-            this.alblText.Font = new System.Drawing.Font("Open Sans", 14.75F);
+            this.alblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
             this.alblText.ForeColor = System.Drawing.Color.White;
-            this.alblText.Location = new System.Drawing.Point(196, 227);
+            this.alblText.Location = new System.Drawing.Point(261, 279);
+            this.alblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alblText.Name = "alblText";
-            this.alblText.Size = new System.Drawing.Size(183, 27);
+            this.alblText.Size = new System.Drawing.Size(221, 29);
             this.alblText.TabIndex = 0;
             this.alblText.Text = "Caractere do meio";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 14.75F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(196, 418);
+            this.label2.Location = new System.Drawing.Point(261, 514);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 27);
+            this.label2.Size = new System.Drawing.Size(134, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Bottomkey";
             // 
@@ -121,10 +125,11 @@
             this.apnlTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.apnlTextbox1.Controls.Add(this.txt1);
             this.apnlTextbox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.apnlTextbox1.Location = new System.Drawing.Point(196, 121);
+            this.apnlTextbox1.Location = new System.Drawing.Point(261, 149);
+            this.apnlTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apnlTextbox1.Name = "apnlTextbox1";
-            this.apnlTextbox1.Padding = new System.Windows.Forms.Padding(5);
-            this.apnlTextbox1.Size = new System.Drawing.Size(328, 50);
+            this.apnlTextbox1.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.apnlTextbox1.Size = new System.Drawing.Size(437, 62);
             this.apnlTextbox1.TabIndex = 2;
             // 
             // txt1
@@ -133,12 +138,13 @@
             this.txt1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.txt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txt1.Font = new System.Drawing.Font("Open Sans", 11.25F);
+            this.txt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txt1.Location = new System.Drawing.Point(0, 14);
+            this.txt1.Location = new System.Drawing.Point(0, 17);
+            this.txt1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt1.MaxLength = 1;
             this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(328, 21);
+            this.txt1.Size = new System.Drawing.Size(437, 22);
             this.txt1.TabIndex = 1;
             this.txt1.Text = "Um único caractere, por favor.";
             this.txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -157,10 +163,11 @@
             this.apnlTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.apnlTextbox2.Controls.Add(this.txt2);
             this.apnlTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.apnlTextbox2.Location = new System.Drawing.Point(201, 269);
+            this.apnlTextbox2.Location = new System.Drawing.Point(268, 331);
+            this.apnlTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apnlTextbox2.Name = "apnlTextbox2";
-            this.apnlTextbox2.Padding = new System.Windows.Forms.Padding(5);
-            this.apnlTextbox2.Size = new System.Drawing.Size(328, 52);
+            this.apnlTextbox2.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.apnlTextbox2.Size = new System.Drawing.Size(437, 64);
             this.apnlTextbox2.TabIndex = 3;
             // 
             // txt2
@@ -169,12 +176,13 @@
             this.txt2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.txt2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt2.Font = new System.Drawing.Font("Open Sans", 11.25F);
+            this.txt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txt2.Location = new System.Drawing.Point(0, 14);
+            this.txt2.Location = new System.Drawing.Point(0, 17);
+            this.txt2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt2.MaxLength = 30;
             this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(328, 21);
+            this.txt2.Size = new System.Drawing.Size(437, 22);
             this.txt2.TabIndex = 2;
             this.txt2.Text = "Aqui pode deixar quantos quiser ;)";
             this.txt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -193,10 +201,11 @@
             this.apnlTextbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.apnlTextbox3.Controls.Add(this.txt3);
             this.apnlTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.apnlTextbox3.Location = new System.Drawing.Point(196, 484);
+            this.apnlTextbox3.Location = new System.Drawing.Point(261, 596);
+            this.apnlTextbox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apnlTextbox3.Name = "apnlTextbox3";
-            this.apnlTextbox3.Padding = new System.Windows.Forms.Padding(5);
-            this.apnlTextbox3.Size = new System.Drawing.Size(328, 52);
+            this.apnlTextbox3.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.apnlTextbox3.Size = new System.Drawing.Size(437, 64);
             this.apnlTextbox3.TabIndex = 3;
             // 
             // txt3
@@ -205,12 +214,13 @@
             this.txt3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.txt3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt3.Font = new System.Drawing.Font("Open Sans", 11.25F);
+            this.txt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txt3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.txt3.Location = new System.Drawing.Point(0, 14);
+            this.txt3.Location = new System.Drawing.Point(0, 17);
+            this.txt3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt3.MaxLength = 1;
             this.txt3.Name = "txt3";
-            this.txt3.Size = new System.Drawing.Size(328, 21);
+            this.txt3.Size = new System.Drawing.Size(437, 22);
             this.txt3.TabIndex = 3;
             this.txt3.Text = "Um único caractere, por favor.";
             this.txt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -227,33 +237,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 10.75F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.75F);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(196, 80);
+            this.label1.Location = new System.Drawing.Point(261, 98);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 20);
+            this.label1.Size = new System.Drawing.Size(164, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "(caractere de cima)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Open Sans", 10.75F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.75F);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(196, 445);
+            this.label3.Location = new System.Drawing.Point(261, 548);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 20);
+            this.label3.Size = new System.Drawing.Size(238, 22);
             this.label3.TabIndex = 0;
             this.label3.Text = "(caractere da tecla de baixo)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Open Sans", 9.75F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(198, 324);
+            this.label4.Location = new System.Drawing.Point(264, 399);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 36);
+            this.label4.Size = new System.Drawing.Size(444, 40);
             this.label4.TabIndex = 0;
             this.label4.Text = "Dependendo do tamanho da fonte que você escolheu, \r\ndará para deixar mais ou meno" +
     "s letras numa única tecla ;)\r\n";
@@ -267,12 +280,13 @@
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Open Sans", 12.25F);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(559, 575);
+            this.btnExit.Location = new System.Drawing.Point(745, 708);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(5);
-            this.btnExit.Size = new System.Drawing.Size(190, 58);
+            this.btnExit.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnExit.Size = new System.Drawing.Size(253, 71);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Tira-me daqui!";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -285,9 +299,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(484, 58);
+            this.textBox1.Location = new System.Drawing.Point(645, 71);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.Visible = false;
             // 
@@ -305,9 +320,10 @@
             this.pnlIcons.Controls.Add(this.picBoxIcon3);
             this.pnlIcons.Controls.Add(this.picBoxIcon2);
             this.pnlIcons.Controls.Add(this.picBoxIcon1);
-            this.pnlIcons.Location = new System.Drawing.Point(727, 163);
+            this.pnlIcons.Location = new System.Drawing.Point(969, 201);
+            this.pnlIcons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlIcons.Name = "pnlIcons";
-            this.pnlIcons.Size = new System.Drawing.Size(281, 125);
+            this.pnlIcons.Size = new System.Drawing.Size(375, 154);
             this.pnlIcons.TabIndex = 6;
             // 
             // pnlBtnIconChosen
@@ -315,9 +331,10 @@
             this.pnlBtnIconChosen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(255)))));
             this.pnlBtnIconChosen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBtnIconChosen.BackgroundImage")));
             this.pnlBtnIconChosen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlBtnIconChosen.Location = new System.Drawing.Point(43, 41);
+            this.pnlBtnIconChosen.Location = new System.Drawing.Point(57, 50);
+            this.pnlBtnIconChosen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBtnIconChosen.Name = "pnlBtnIconChosen";
-            this.pnlBtnIconChosen.Size = new System.Drawing.Size(17, 17);
+            this.pnlBtnIconChosen.Size = new System.Drawing.Size(23, 21);
             this.pnlBtnIconChosen.TabIndex = 11;
             this.pnlBtnIconChosen.Visible = false;
             // 
@@ -325,9 +342,10 @@
             // 
             this.picBoxIcon10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon10.Location = new System.Drawing.Point(219, 64);
+            this.picBoxIcon10.Location = new System.Drawing.Point(292, 79);
+            this.picBoxIcon10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon10.Name = "picBoxIcon10";
-            this.picBoxIcon10.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon10.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon10.TabIndex = 10;
             this.picBoxIcon10.TabStop = false;
             this.picBoxIcon10.Tag = "Not chosen";
@@ -338,9 +356,10 @@
             // 
             this.picBoxIcon9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon9.Location = new System.Drawing.Point(168, 64);
+            this.picBoxIcon9.Location = new System.Drawing.Point(224, 79);
+            this.picBoxIcon9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon9.Name = "picBoxIcon9";
-            this.picBoxIcon9.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon9.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon9.TabIndex = 9;
             this.picBoxIcon9.TabStop = false;
             this.picBoxIcon9.Tag = "Not chosen";
@@ -351,9 +370,10 @@
             // 
             this.picBoxIcon8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon8.Location = new System.Drawing.Point(117, 64);
+            this.picBoxIcon8.Location = new System.Drawing.Point(156, 79);
+            this.picBoxIcon8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon8.Name = "picBoxIcon8";
-            this.picBoxIcon8.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon8.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon8.TabIndex = 6;
             this.picBoxIcon8.TabStop = false;
             this.picBoxIcon8.Tag = "Not chosen";
@@ -364,9 +384,10 @@
             // 
             this.picBoxIcon7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon7.Location = new System.Drawing.Point(66, 64);
+            this.picBoxIcon7.Location = new System.Drawing.Point(88, 79);
+            this.picBoxIcon7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon7.Name = "picBoxIcon7";
-            this.picBoxIcon7.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon7.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon7.TabIndex = 7;
             this.picBoxIcon7.TabStop = false;
             this.picBoxIcon7.Tag = "Not chosen";
@@ -377,9 +398,10 @@
             // 
             this.picBoxIcon6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon6.Location = new System.Drawing.Point(15, 64);
+            this.picBoxIcon6.Location = new System.Drawing.Point(20, 79);
+            this.picBoxIcon6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon6.Name = "picBoxIcon6";
-            this.picBoxIcon6.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon6.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon6.TabIndex = 8;
             this.picBoxIcon6.TabStop = false;
             this.picBoxIcon6.Tag = "Not chosen";
@@ -390,9 +412,10 @@
             // 
             this.picBoxIcon5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon5.Location = new System.Drawing.Point(219, 13);
+            this.picBoxIcon5.Location = new System.Drawing.Point(292, 16);
+            this.picBoxIcon5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon5.Name = "picBoxIcon5";
-            this.picBoxIcon5.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon5.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon5.TabIndex = 5;
             this.picBoxIcon5.TabStop = false;
             this.picBoxIcon5.Tag = "Not chosen";
@@ -403,9 +426,10 @@
             // 
             this.picBoxIcon4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon4.Location = new System.Drawing.Point(168, 13);
+            this.picBoxIcon4.Location = new System.Drawing.Point(224, 16);
+            this.picBoxIcon4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon4.Name = "picBoxIcon4";
-            this.picBoxIcon4.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon4.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon4.TabIndex = 3;
             this.picBoxIcon4.TabStop = false;
             this.picBoxIcon4.Tag = "Not chosen";
@@ -416,9 +440,10 @@
             // 
             this.picBoxIcon3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon3.Location = new System.Drawing.Point(117, 13);
+            this.picBoxIcon3.Location = new System.Drawing.Point(156, 16);
+            this.picBoxIcon3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon3.Name = "picBoxIcon3";
-            this.picBoxIcon3.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon3.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon3.TabIndex = 0;
             this.picBoxIcon3.TabStop = false;
             this.picBoxIcon3.Tag = "Not chosen";
@@ -429,9 +454,10 @@
             // 
             this.picBoxIcon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon2.Location = new System.Drawing.Point(66, 13);
+            this.picBoxIcon2.Location = new System.Drawing.Point(88, 16);
+            this.picBoxIcon2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon2.Name = "picBoxIcon2";
-            this.picBoxIcon2.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon2.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon2.TabIndex = 1;
             this.picBoxIcon2.TabStop = false;
             this.picBoxIcon2.Tag = "Not chosen";
@@ -442,9 +468,10 @@
             // 
             this.picBoxIcon1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxIcon1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxIcon1.Location = new System.Drawing.Point(15, 13);
+            this.picBoxIcon1.Location = new System.Drawing.Point(20, 16);
+            this.picBoxIcon1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxIcon1.Name = "picBoxIcon1";
-            this.picBoxIcon1.Size = new System.Drawing.Size(38, 40);
+            this.picBoxIcon1.Size = new System.Drawing.Size(51, 49);
             this.picBoxIcon1.TabIndex = 2;
             this.picBoxIcon1.TabStop = false;
             this.picBoxIcon1.Tag = "Not chosen";
@@ -454,19 +481,21 @@
             // apnlLayoutDivisor
             // 
             this.apnlLayoutDivisor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(255)))));
-            this.apnlLayoutDivisor.Location = new System.Drawing.Point(649, 52);
+            this.apnlLayoutDivisor.Location = new System.Drawing.Point(865, 64);
+            this.apnlLayoutDivisor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.apnlLayoutDivisor.Name = "apnlLayoutDivisor";
-            this.apnlLayoutDivisor.Size = new System.Drawing.Size(10, 479);
+            this.apnlLayoutDivisor.Size = new System.Drawing.Size(13, 590);
             this.apnlLayoutDivisor.TabIndex = 7;
             // 
             // alblIcon
             // 
             this.alblIcon.AutoSize = true;
-            this.alblIcon.Font = new System.Drawing.Font("Open Sans", 14.75F);
+            this.alblIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
             this.alblIcon.ForeColor = System.Drawing.Color.White;
-            this.alblIcon.Location = new System.Drawing.Point(717, 58);
+            this.alblIcon.Location = new System.Drawing.Point(956, 71);
+            this.alblIcon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alblIcon.Name = "alblIcon";
-            this.alblIcon.Size = new System.Drawing.Size(73, 27);
+            this.alblIcon.Size = new System.Drawing.Size(87, 29);
             this.alblIcon.TabIndex = 0;
             this.alblIcon.Text = "Ícones";
             // 
@@ -478,12 +507,13 @@
             this.btnNewIcon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnNewIcon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnNewIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewIcon.Font = new System.Drawing.Font("Open Sans", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnNewIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.btnNewIcon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
-            this.btnNewIcon.Location = new System.Drawing.Point(1014, 163);
+            this.btnNewIcon.Location = new System.Drawing.Point(1352, 201);
+            this.btnNewIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewIcon.Name = "btnNewIcon";
-            this.btnNewIcon.Padding = new System.Windows.Forms.Padding(0, 0, 0, 13);
-            this.btnNewIcon.Size = new System.Drawing.Size(93, 125);
+            this.btnNewIcon.Padding = new System.Windows.Forms.Padding(0, 0, 0, 16);
+            this.btnNewIcon.Size = new System.Drawing.Size(124, 154);
             this.btnNewIcon.TabIndex = 8;
             this.btnNewIcon.Text = "Novo!";
             this.btnNewIcon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -494,12 +524,13 @@
             // 
             this.lnklblEsqueceuSenha.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lnklblEsqueceuSenha.AutoSize = true;
-            this.lnklblEsqueceuSenha.Font = new System.Drawing.Font("Open Sans", 9.25F);
+            this.lnklblEsqueceuSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.lnklblEsqueceuSenha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnklblEsqueceuSenha.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(255)))));
-            this.lnklblEsqueceuSenha.Location = new System.Drawing.Point(724, 464);
+            this.lnklblEsqueceuSenha.Location = new System.Drawing.Point(965, 571);
+            this.lnklblEsqueceuSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnklblEsqueceuSenha.Name = "lnklblEsqueceuSenha";
-            this.lnklblEsqueceuSenha.Size = new System.Drawing.Size(231, 18);
+            this.lnklblEsqueceuSenha.Size = new System.Drawing.Size(274, 20);
             this.lnklblEsqueceuSenha.TabIndex = 9;
             this.lnklblEsqueceuSenha.TabStop = true;
             this.lnklblEsqueceuSenha.Text = "Clique aqui para baixar ícones do site.";
@@ -509,29 +540,32 @@
             // 
             this.alblLinkProSite.AutoSize = true;
             this.alblLinkProSite.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.alblLinkProSite.Font = new System.Drawing.Font("Open Sans", 9.75F);
+            this.alblLinkProSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.alblLinkProSite.ForeColor = System.Drawing.Color.DimGray;
-            this.alblLinkProSite.Location = new System.Drawing.Point(724, 418);
+            this.alblLinkProSite.Location = new System.Drawing.Point(965, 514);
+            this.alblLinkProSite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alblLinkProSite.Name = "alblLinkProSite";
-            this.alblLinkProSite.Size = new System.Drawing.Size(251, 36);
+            this.alblLinkProSite.Size = new System.Drawing.Size(317, 40);
             this.alblLinkProSite.TabIndex = 0;
             this.alblLinkProSite.Text = "Por acaso está interessado(a) em \r\nícones desenvolvidos pela nossa equipe?";
             // 
             // pnlBlocked1
             // 
             this.pnlBlocked1.BackColor = System.Drawing.Color.Red;
-            this.pnlBlocked1.Location = new System.Drawing.Point(179, 142);
+            this.pnlBlocked1.Location = new System.Drawing.Point(239, 175);
+            this.pnlBlocked1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBlocked1.Name = "pnlBlocked1";
-            this.pnlBlocked1.Size = new System.Drawing.Size(368, 10);
+            this.pnlBlocked1.Size = new System.Drawing.Size(491, 12);
             this.pnlBlocked1.TabIndex = 17;
             this.pnlBlocked1.Visible = false;
             // 
             // pnlBlocked3
             // 
             this.pnlBlocked3.BackColor = System.Drawing.Color.Red;
-            this.pnlBlocked3.Location = new System.Drawing.Point(179, 504);
+            this.pnlBlocked3.Location = new System.Drawing.Point(239, 620);
+            this.pnlBlocked3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBlocked3.Name = "pnlBlocked3";
-            this.pnlBlocked3.Size = new System.Drawing.Size(368, 10);
+            this.pnlBlocked3.Size = new System.Drawing.Size(491, 12);
             this.pnlBlocked3.TabIndex = 18;
             this.pnlBlocked3.Visible = false;
             // 
@@ -539,12 +573,13 @@
             // 
             this.lnkRedefineIcons.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lnkRedefineIcons.AutoSize = true;
-            this.lnkRedefineIcons.Font = new System.Drawing.Font("Open Sans", 9.25F);
+            this.lnkRedefineIcons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.lnkRedefineIcons.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkRedefineIcons.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(255)))));
-            this.lnkRedefineIcons.Location = new System.Drawing.Point(724, 303);
+            this.lnkRedefineIcons.Location = new System.Drawing.Point(965, 373);
+            this.lnkRedefineIcons.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkRedefineIcons.Name = "lnkRedefineIcons";
-            this.lnkRedefineIcons.Size = new System.Drawing.Size(152, 18);
+            this.lnkRedefineIcons.Size = new System.Drawing.Size(178, 20);
             this.lnkRedefineIcons.TabIndex = 19;
             this.lnkRedefineIcons.TabStop = true;
             this.lnkRedefineIcons.Text = "Voltar ícone pro padrão.";
@@ -561,11 +596,29 @@
             this.epnlIcons.ElipseRadius = 5;
             this.epnlIcons.TargetControl = this.pnlIcons;
             // 
+            // lblDeleteIcon
+            // 
+            this.lblDeleteIcon.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblDeleteIcon.AutoSize = true;
+            this.lblDeleteIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.lblDeleteIcon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblDeleteIcon.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(255)))));
+            this.lblDeleteIcon.Location = new System.Drawing.Point(965, 419);
+            this.lblDeleteIcon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeleteIcon.Name = "lblDeleteIcon";
+            this.lblDeleteIcon.Size = new System.Drawing.Size(97, 20);
+            this.lblDeleteIcon.TabIndex = 20;
+            this.lblDeleteIcon.TabStop = true;
+            this.lblDeleteIcon.Text = "Excluir ícone";
+            this.lblDeleteIcon.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(147)))), ((int)(((byte)(255)))));
+            this.lblDeleteIcon.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblDeleteIcon_LinkClicked);
+            // 
             // KeycapTextIconModule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 654);
+            this.ClientSize = new System.Drawing.Size(1577, 805);
+            this.Controls.Add(this.lblDeleteIcon);
             this.Controls.Add(this.lnkRedefineIcons);
             this.Controls.Add(this.pnlBlocked3);
             this.Controls.Add(this.pnlBlocked1);
@@ -586,6 +639,7 @@
             this.Controls.Add(this.alblIcon);
             this.Controls.Add(this.alblUpperText);
             this.Controls.Add(this.apnlTextbox1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "KeycapTextIconModule";
             this.Opacity = 1D;
             this.Controls.SetChildIndex(this.apnlTextbox1, 0);
@@ -608,6 +662,7 @@
             this.Controls.SetChildIndex(this.pnlBlocked1, 0);
             this.Controls.SetChildIndex(this.pnlBlocked3, 0);
             this.Controls.SetChildIndex(this.lnkRedefineIcons, 0);
+            this.Controls.SetChildIndex(this.lblDeleteIcon, 0);
             this.apnlTextbox1.ResumeLayout(false);
             this.apnlTextbox1.PerformLayout();
             this.apnlTextbox2.ResumeLayout(false);
@@ -669,5 +724,6 @@
         private System.Windows.Forms.LinkLabel lnkRedefineIcons;
         private Bunifu.Framework.UI.BunifuElipse ebtnNewIcon;
         private Bunifu.Framework.UI.BunifuElipse epnlIcons;
+        private System.Windows.Forms.LinkLabel lblDeleteIcon;
     }
 }

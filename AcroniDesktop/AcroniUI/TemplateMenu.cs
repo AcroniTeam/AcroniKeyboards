@@ -158,7 +158,6 @@ namespace AcroniUI
                     {
                         (form as LoginAndSignUp.FrmLogin).CleanAllTextbox();
                         form.Show();
-                        File.Delete($@"{Application.StartupPath}\Users\{SQLConnection.nome_usuario}.acr");
                         break;
                     }
                     else

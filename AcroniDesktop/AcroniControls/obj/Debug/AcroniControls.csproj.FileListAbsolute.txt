@@ -59,7 +59,6 @@ C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.MessageBoxSemInternet.resources
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.Properties.Resources.resources
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.csproj.GenerateResource.cache
-C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.csproj.CoreCompileInputs.cache
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.csproj.CopyComplete
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.dll
 C:\Users\Gabriel\Documents\GitHub\AcroniDesktop-tcm\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.pdb

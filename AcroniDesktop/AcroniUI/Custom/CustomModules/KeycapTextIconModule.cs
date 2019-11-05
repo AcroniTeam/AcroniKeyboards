@@ -14,7 +14,6 @@ namespace AcroniUI.Custom.CustomModules
 {
     public partial class KeycapTextIconModule : KeycapParentModule
     {
-
         public KeycapTextIconModule(bool BlockUpper, bool BlockBottom, string keycaptext)
         {
             InitializeComponent();
@@ -311,6 +310,12 @@ namespace AcroniUI.Custom.CustomModules
         private void lnkRedefineIcons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SelectedIcon = null;
+        }
+
+        private void lblDeleteIcon_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SelectedIcon = null;
+            HasChosenAIcon = true;
         }
     }
 }
