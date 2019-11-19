@@ -80,7 +80,7 @@ namespace AcroniUI
                         {
                             Share.Keyboard = userKeyboard;
                             Share.EditKeyboard = true;
-                            Form editKeyboard = null;
+                            Form editKeyboard = new Compacto();
                             if (userKeyboard.KeyboardType.Equals("Compacto"))
                                 editKeyboard = new Compacto();
                             else if (userKeyboard.KeyboardType.Equals("Tenkeyless"))

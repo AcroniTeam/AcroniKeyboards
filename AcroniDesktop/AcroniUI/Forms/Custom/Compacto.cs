@@ -14,13 +14,28 @@ using Bunifu.Framework.UI;
 using AcroniLibrary.SQL;
 using System.Data;
 using System.Threading;
+using FireSharp.Interfaces;
+using FireSharp.Config;
+using FireSharp.Response;
+using AcroniLibrary.FirebaseData;
 
 namespace AcroniUI.Custom
 {
     public partial class Compacto : Template
     {
-        #region Declarações 
+        private List<short> kbtnListSwitch = new List<short>();
+        #region Firebase instances
 
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "SkeKuTHfj9sk7hZbKB91MTgcsvCzGw54M7timKeA",
+            BasePath = "https://analytics-7777.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+        #endregion
+        #region Declarações 
+        double preco = 225;
         // Definição do botão de teclado genérico (kbtn)
         Label keybutton;
         int paintedKeycapsCounter = 0;
@@ -95,11 +110,6 @@ namespace AcroniUI.Custom
                 pnlHeadColorpicker.Location = new Point(915, (this.Height - pnlHeadColorpicker.Height - pnlBodyColorpicker.Height) / 2);
                 apnlCustomOptionsLeft.Location = new Point(0, 0);
                 apnlCustomOptionsRight.Location = new Point(878, 0);
-                picBoxKeyboardBackground.Location = new Point(
-                    this.Width - picBoxKeyboardBackground.Width / 2 - pnlBodyColorpicker.Width,
-                    this.Height - picBoxKeyboardBackground.Height / 2 - (pnlCustomizingMenu.Height + 40)
-
-                    );
             }
             else
             {
@@ -110,6 +120,11 @@ namespace AcroniUI.Custom
                 pnlHeadColorpicker.Location = new Point(this.Width - pnlHeadColorpicker.Width - 60, (this.Height - pnlHeadColorpicker.Height - pnlBodyColorpicker.Height) / 2);
                 apnlCustomOptionsLeft.Location = new Point(this.Width * 2 / 3, 0);
                 apnlCustomOptionsRight.Location = new Point(this.Width * 2 / 3, 0);
+                picBoxKeyboardBackground.Location = new Point(
+                    this.Width / 2 - picBoxKeyboardBackground.Width - pnlBodyColorpicker.Width,
+                    this.Height / 2 - picBoxKeyboardBackground.Height - (pnlCustomizingMenu.Height + 40)
+
+                    );
             }
 
         }
@@ -350,6 +365,8 @@ namespace AcroniUI.Custom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        private List<string> kbtnList = new List<string>();
+        private List<string> kbtnListIcon = new List<string>();
         private void kbtn_Click(object sender, EventArgs e)
         {
             keybutton = (Label)sender;
@@ -357,14 +374,30 @@ namespace AcroniUI.Custom
             #region Atribuição de cores
             if (!btnOpenModuleBackground.Tag.Equals("active") && !btnOpenModuleSwitch.Tag.Equals("active") && !btnOpenModuleTexture.Tag.Equals("active") && !btnOpenModuleTextIcons.Tag.Equals("active"))
                 if (btnStyleFontColor.Tag.Equals("active"))
-                    keybutton.ForeColor = FontColor;
-
+                {                
+                    if (keybutton.ForeColor != FontColor) //se não for a mesma 
+                    {
+                        keybutton.ForeColor = FontColor; //atribuição da cor
+                        if (FontColor != Color.White && FontColor!=Color.FromArgb(204,204,204))
+                        { //se não for a cor default das fontes do teclado, add na lista pra somar no preço
+                            if (!kbtnList.Contains(keybutton.Name))
+                                kbtnList.Add(keybutton.Name);
+                        }
+                    }
+                }
                 else
                 {
                     if (keybutton.BackColor == Color.FromArgb(26, 26, 26) && keybutton.BackColor != Color.FromArgb(90, Color))
                         paintedKeycapsCounter++;
-
-                    keybutton.BackColor = Color;
+                    if (keybutton.BackColor != Color&& !btnStyleFontColor.Tag.Equals("active")) //mesma lógica do acima (mudar a cor das letras)
+                    {
+                        keybutton.BackColor = Color;
+                        if (Color != Color.FromArgb(26, 26, 26))
+                        {//se não for a cor default das fontes do teclado, add na lista pra somar no preço
+                            if (!kbtnList.Contains(keybutton.Name))
+                                kbtnList.Add(keybutton.Name);
+                        }                      
+                    }
                     keybutton.Parent.BackColor = Color.FromArgb(90, Color);
                     keybutton.Parent.BackgroundImage = null;
                     if (Color != Color.FromArgb(26, 26, 26))
@@ -400,7 +433,7 @@ namespace AcroniUI.Custom
                         else
                         {
                             keybutton.Parent.BackColor = Color.Black;
-                            keybutton.Parent.BackgroundImage = Image.FromFile($@"{Application.StartupPath}\Images\Teclas\{keybutton.Name}.png");
+                            keybutton.Parent.BackgroundImage = Image.FromFile($@"{Application.StartupPath}\..\..\Images\Teclas\{keybutton.Name}.png");
                         }
                     }
                 }
@@ -422,10 +455,15 @@ namespace AcroniUI.Custom
 
                 if (__checkIfCanApplyStyle == 4)
                 {
+                    if (!keybutton.Font.FontFamily.Name.Equals(cmbFontes.Text))
+                        if (!kbtnList.Contains(keybutton.Name))
+                            kbtnList.Add(keybutton.Name);
                     keybutton.Font = new Font(cmbFontes.Text, float.Parse(cmbFontSize.Text), __fontStyle);
+                    
                     keybutton.TextAlign = (ContentAlignment)__contentAlignment;
                     keybutton.ImageAlign = (ContentAlignment)__contentAlignment;
                     __checkIfCanApplyStyle = 0;
+
                 }
             }
 
@@ -485,11 +523,17 @@ namespace AcroniUI.Custom
                             // fiz a variável razão, pois colocar direto não tava dando certo devido ao math.round
                             ImageConverter a = new ImageConverter();
                             Image icon = new Bitmap(ktm.SelectedIcon, width, height);
+                            if (keybutton.Image == null)
+                                if(!kbtnListIcon.Contains(keybutton.Name))
+                                    kbtnListIcon.Add(keybutton.Name);
                             keybutton.Image = icon;
                             keybutton.ImageAlign = ContentAlignment.MiddleCenter;
                         }
                         else
+                        {
                             keybutton.Image = null;
+                            kbtnListIcon.Remove(keybutton.Name);
+                        }
                     }
                     catch (Exception) { }
                 }
@@ -502,11 +546,29 @@ namespace AcroniUI.Custom
                 ksm = new KeycapSwitchModule(keybutton.Name,(short)keybutton.Tag);
                 else
                 ksm = new KeycapSwitchModule(keybutton.Name, 0);
-
                 OpenModule(ksm);
+                if (kbtnListSwitch == null) { kbtnListSwitch = new List<short>(); }
                 if (ksm.DialogResult == DialogResult.Yes)
                 {
-                    //keybutton.Tag = ksm.chosenSwitch;
+                    keybutton.Tag = ksm.chosenSwitch;
+                    if (ksm.allChosen)
+                    {
+                        foreach (Control keycap in pnlWithKeycaps.Controls)
+                        {
+                            if (keycap is Panel && keycap.HasChildren)
+                            {
+                                if (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] is Label)
+                                {
+                                    keycap.Controls[keycap.Name.Replace("fundo", "lbl")].Tag = ksm.chosenSwitch;
+                                }
+                            }
+                        }
+                        kbtnListSwitch = new List<short>();
+                        kbtnListSwitch.Add(ksm.chosenSwitch);
+                    }
+                    else
+                    if (!kbtnListSwitch.Contains(ksm.chosenSwitch))
+                        kbtnListSwitch.Add(ksm.chosenSwitch);
                     //foreach (Control keycap in pnlWithKeycaps.Controls)
                     //{
                     //    if (keycap is Panel && keycap.HasChildren)
@@ -566,6 +628,9 @@ namespace AcroniUI.Custom
                     }
                 }
             }
+            if (keybutton.BackColor == Color.FromArgb(26, 26, 26) && (keybutton.ForeColor == Color.White||keybutton.ForeColor==Color.FromArgb(204,204,204)||keybutton.Text.Equals("")) && (keybutton.Font.FontFamily.Name.Equals("Open Sans") || keybutton.Font.FontFamily.Name.Equals("Microsoft Sans Serif") || keybutton.Font.FontFamily.Name.Equals("Microsoft Yi Baiti")))
+                kbtnList.Remove(keybutton.Name);
+            attPrice(false,false);
             #endregion
         }
 
@@ -643,7 +708,6 @@ namespace AcroniUI.Custom
             this.Close();
             SelectKeyboard __selectKeyboard = new SelectKeyboard();
             __selectKeyboard.ShowDialog();
-
         }
 
         private void btnVoltar_MouseMove(object sender, MouseEventArgs e)
@@ -743,7 +807,6 @@ namespace AcroniUI.Custom
             Button b = (Button)sender;
             lblHexaColor.Text = $"#{b.BackColor.R.ToString("X2")}{b.BackColor.G.ToString("X2")}{b.BackColor.B.ToString("X2")}";
 
-            if (btnStyleFontColor.Tag.Equals("active"))
                 FontColor = b.BackColor;
 
             if (b.Tag.ToString().Contains("Ambar"))
@@ -761,7 +824,6 @@ namespace AcroniUI.Custom
             transition.run();
 
             //Define a cor da tecla no kbtn_Click. 
-            if (!btnStyleFontColor.Tag.Equals("active"))
                 Color = b.BackColor;
 
             if (__IsSlotAvailable[0])
@@ -869,12 +931,22 @@ namespace AcroniUI.Custom
                     {
                         if (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] is Label)
                         {
-                            (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).BackColor = Color;
+                            if(!btnStyleFontColor.Tag.Equals("active"))
+                            (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).BackColor = Color;                              
                             (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).Font = new Font(cmbFontes.Text, float.Parse(cmbFontSize.Text), __fontStyle);
+                            if (!((keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).Font.FontFamily.Name.Equals("Open Sans") || (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).Font.FontFamily.Name.Equals("Microsoft Sans Serif")))
+                            {
+                                kbtnList = new List<string>();
+                                attPrice(true, false);
+                            }
+                            else
+                                attPrice(false,true);
                             (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).TextAlign = (ContentAlignment)__contentAlignment;
 
-                            if (Color != Color.FromArgb(26, 26, 26))
+                            if (Color != Color.FromArgb(26, 26, 26) && !btnStyleFontColor.Tag.Equals("active"))
                             {
+                                attPrice(true,false);
+                                kbtnList = new List<string>();
                                 if (/*(keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label) == lblCb14sExtensao || */(keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label) == lblCc14s)
                                 {
                                     lblCc14s.Parent.BackgroundImage = null;
@@ -902,19 +974,26 @@ namespace AcroniUI.Custom
                                 keycap.BackColor = Color.FromArgb(90, (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).BackColor);
                             }
 
-                            else
+                            else if (!btnStyleFontColor.Tag.Equals("active"))
                             {
                                 if ((keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).Size.Equals(new Size(38, 39)))
-                                    keycap.BackgroundImage = Image.FromFile($@"{Application.StartupPath}\Images\Teclas\keycapbackgrounddefault.png");
+                                    keycap.BackgroundImage = Image.FromFile($@"{Application.StartupPath}\..\..\Images\Teclas\keycapbackgrounddefault.png");
                                 else
                                 {
                                     keycap.BackColor = Color.Black;
-                                    keycap.BackgroundImage = Image.FromFile($@"{Application.StartupPath}\Images\Teclas\{(keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).Name}.png");
+                                    keycap.BackgroundImage = Image.FromFile($@"{Application.StartupPath}\..\..\Images\Teclas\{(keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).Name}.png");
                                 }
 
                             }
                             if (btnStyleFontColor.Tag.Equals("active"))
+                            {
                                 (keycap.Controls[keycap.Name.Replace("fundo", "lbl")] as Label).ForeColor = FontColor;
+                                if (FontColor != Color.FromArgb(255, 255, 255) && FontColor != Color.FromArgb(204, 204, 204))
+                                {
+                                    kbtnList = new List<string>();
+                                    attPrice(true, false);
+                                }
+                            }
                         }
                     }
                 }
@@ -981,13 +1060,45 @@ namespace AcroniUI.Custom
         {
             ApplyColorToModuleButton(btnOpenModuleTextIcons, true);
         }
+        int fixedPrice = 0;
+        private void attPrice(bool activateFixedPrice,bool nullFixedPrice = false)
+        {
+            double dynamicPrice = 225;
+            if (nullFixedPrice)
+                fixedPrice = 0;
+                if (picBoxKeyboardBackground.Image!=null)
+                    dynamicPrice += 40;
+                double iconPrices = 0;
+                double color_fontPrices = 0;
+                if (kbtnList.Contains("lblCe4s"))
+                    iconPrices += 10;
+                iconPrices += kbtnListIcon.Count * 5;
+            double switchPrices = 0;
+            if (kbtnListSwitch.Count != 0)
+                switchPrices = (kbtnListSwitch.Count - 1) * 14.9;
 
+                color_fontPrices = kbtnList.Count * 1.5;
+                if (iconPrices > 30)
+                    iconPrices = 30;
+                if (color_fontPrices > 20)
+                    color_fontPrices = 20;
+            if (activateFixedPrice)
+                fixedPrice = 30;
+                dynamicPrice += iconPrices + color_fontPrices + switchPrices + this.fixedPrice;
+            if (picBoxKeyboardBackground.BackColor != Color.FromArgb(51, 51, 51) && picBoxKeyboardBackground.BackColor != Color.FromArgb(26, 26, 26))
+                dynamicPrice += 7;
+            lblPrecoAtual.Text = "R$" + dynamicPrice;
+            preco = dynamicPrice;
+        }
         private void btnOpenModuleBackground_Click(object sender, EventArgs e)
         {
             KeycapBackgroundModule kbm = new KeycapBackgroundModule();
             OpenModule(kbm);
             if (kbm.DialogResult == DialogResult.Yes)
+            {
                 picBoxKeyboardBackground.Image = kbm.SelectedImg;
+            }
+            attPrice(false);
         }
 
         private void btnOpenModuleTexture_Click(object sender, EventArgs e)
@@ -1011,6 +1122,10 @@ namespace AcroniUI.Custom
         private void LoadKeyboard()
         {
             bool addedEnterYet = false;
+            kbtnListSwitch = Share.Keyboard.kbtnListSwitch;
+            kbtnList = Share.Keyboard.kbtnList;
+            kbtnListIcon = Share.Keyboard.kbtnListIcons;
+            fixedPrice = Share.Keyboard.fixedPrice;
             picBoxKeyboardBackground.Image = Share.Keyboard.BackgroundImage;
             picBoxKeyboardBackground.SizeMode = (PictureBoxSizeMode)Share.Keyboard.BackgroundModeSize;
             picBoxKeyboardBackground.BackColor = Share.Keyboard.BackgroundColor;
@@ -1048,8 +1163,6 @@ namespace AcroniUI.Custom
                                     }
                                 }
                                 //keycap.Text = k.Text;
-
-
                                 break;
                             }
                             catch (Exception e) { MessageBox.Show(e.Message); }
@@ -1058,6 +1171,7 @@ namespace AcroniUI.Custom
                 }
             }
             lblPaintedKeycaps.Text = paintedKeycapsCounter + "";
+            attPrice(false,false);
         }
 
 
@@ -1150,6 +1264,7 @@ namespace AcroniUI.Custom
                         if (!String.IsNullOrEmpty(Share.Collection.CollectionName))
                         {
                             setPropriedadesTeclado();
+                            DataAnalyticalSender();
                             SQLProcMethods.UPDATE_QtdeTeclados();
                         }
                     }
@@ -1189,6 +1304,12 @@ namespace AcroniUI.Custom
 
         private void setPropriedadesTeclado()
         {
+            attPrice(false,false);
+            keyboard.kbtnListSwitch = kbtnListSwitch;
+            keyboard.kbtnList = kbtnList;
+            keyboard.kbtnListIcons = kbtnListIcon;
+            keyboard.fixedPrice = fixedPrice;
+            keyboard.Price = preco;
             keyboard.Name = "Acroni-Compacto";
             keyboard.ID = KeyboardIDGenerator.GenerateID('C');
             if (!Share.EditKeyboard)
@@ -1214,12 +1335,14 @@ namespace AcroniUI.Custom
                     {
                         foreach (Control c in tecla.Controls)
                         {
-                            foreach (Keycap k in Share.Keyboard.Keycaps)
-                                if (k.ID.Equals(c.Name))
-                                    switch1 = k.Switch;
+                            switch1 = 0;
                             if (c.Name.Contains("lbl"))
                             {
-                                switch1 = (short)(c as Label).Tag;
+                                try
+                                {
+                                    switch1 = (short)(c as Label).Tag;
+                                }
+                                catch (Exception) { }
                                 image = (c as Label).Image;
                                 text = c.Text;
                                 forecolor = c.ForeColor;
@@ -1286,9 +1409,12 @@ namespace AcroniUI.Custom
                     }
                 }
                 if (!alreadyExistsThisKeyboard)
-                    SQLProcMethods.INSERT_TecladoCustomizado(Share.User.ID, img, Share.Collection.CollectionName, Share.Keyboard.NickName, 250.00);
+                    SQLProcMethods.INSERT_TecladoCustomizado(Share.User.ID, img, Share.Collection.CollectionName, Share.Keyboard.NickName, (float)Share.Keyboard.Price);
                 else
+                {
                     SQLProcMethods.UPDATE_ImgTecladoCustomizado(img, Share.User.ID, Share.Keyboard.NickName);
+                    SQLProcMethods.UPDATE_PriceTecladoCustomizado((float)Share.Keyboard.Price, Share.User.ID, Share.Keyboard.NickName);
+                }
             }
             catch (Exception)
             {
@@ -1302,6 +1428,7 @@ namespace AcroniUI.Custom
         private void picBoxKeyboardBackground_Click(object sender, EventArgs e)
         {
             picBoxKeyboardBackground.BackColor = Color;
+            attPrice(false);
             base.generalClickCancel(sender, e);
         }
 
@@ -1329,6 +1456,94 @@ namespace AcroniUI.Custom
                     }
                 }
             }
+            kbtnListIcon = new List<string>();
+            attPrice(false,false);
         }
+        private async void DataAnalyticalSender()
+        {
+            #region Relatório global Firebase
+            // Estratégia: apenas dar um patch nos dados existentes
+            // Pega-se o valor anterior e incrementa-o por mais um
+
+            // Gerando um cliente que será o objeto conexão usando a chave do banco
+            client = new FireSharp.FirebaseClient(config);
+
+
+            if (Share.User.isPremiumAccount)
+            {
+                FirebaseResponse responseGlobal = await client.
+                    GetAsync("/relatoriosGlobais/desktop");
+                GlobalData previousGlobal = responseGlobal.ResultAs<GlobalData>();
+
+
+                var relatorioGlobal = new GlobalData
+                {
+                    tecladosProduzidosPorUsuariosPremium = ++previousGlobal.tecladosProduzidosPorUsuariosPremium
+                };
+
+                await client.UpdateAsync("/relatoriosGlobais/desktop", relatorioGlobal);
+
+            }
+            #endregion
+
+            try
+            {
+                FirebaseResponse response = await client.
+                GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year);
+
+                try
+                {
+                    response = await client.GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth());
+                    MensalData previousMensal = response.ResultAs<MensalData>();
+                    var relatorioMensal = new MensalData
+                    {
+                        qntTecladosProduzidosPorMes = ++previousMensal.qntTecladosProduzidosPorMes
+                    };
+
+                    await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
+                }
+                catch (Exception)
+                {
+                    var mes = new Mes
+                    {
+                        mes = getActualMonth()
+                    };
+                    await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year, mes);
+                }
+            }
+            catch (Exception)
+            {
+                var ano = new Ano
+                {
+                    ano = DateTime.Today.Year
+                };
+                await client.UpdateAsync("/relatoriosMensais/desktop/", ano);
+            }
+
+        }
+        private string getActualMonth()
+        {
+            int nMes = DateTime.Today.Month;
+            string[] meses = new string[12] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
+            "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+            return meses[nMes - 1];
+        }
+
+        private void lblHexaColor_Click(object sender, EventArgs e)
+        {
+            SelectColor selectColor = new SelectColor("ss");
+            selectColor.ShowDialog();
+            if (selectColor.DialogResult==DialogResult.Cancel) { 
+                if (selectColor.SettedColor != Color.Empty)
+                    pnlChosenColor.BackColor = selectColor.SettedColor;
+                lblHexaColor.Text = ColorTranslator.ToHtml(selectColor.SettedColor);
+                lblColorName.Text = "Cor customizada";
+                Color = selectColor.SettedColor;
+                FontColor = selectColor.SettedColor;
+            }
+            
+        }
+
+      
     }
 }

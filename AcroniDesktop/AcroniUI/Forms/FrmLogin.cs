@@ -157,7 +157,10 @@ namespace AcroniUI.LoginAndSignUp
             btnEntrar.Enabled = false;
 
             if (String.IsNullOrEmpty(txtSenha.Text) || String.IsNullOrEmpty(txtEntrar.Text))
+            {
+                btnEntrar.Enabled = true;
                 return;
+            }
 
             Thread spl = new Thread(new ThreadStart(Splash));
             spl.Start();
@@ -178,10 +181,10 @@ namespace AcroniUI.LoginAndSignUp
                     if (resposta[1].ToString() == "p")
                         Share.User.isPremiumAccount = true;
                     Share.User.SendToFile();
-                    spl.Abort();
                     btnEntrar.Enabled = true;
                     Hide();
                     selecionarTeclado = new SelectKeyboard();
+                    spl.Abort();
                     selecionarTeclado.ShowDialog();
                 }
                 else showLoginErrorlabel("A senha está incorreta.");

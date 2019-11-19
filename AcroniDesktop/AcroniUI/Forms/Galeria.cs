@@ -27,16 +27,7 @@ namespace AcroniUI
         int countWidthKeyboard = 0;
         bool selectMode;
 
-        #region Firebase instances
-
-        IFirebaseConfig config = new FirebaseConfig
-        {
-            AuthSecret = "SkeKuTHfj9sk7hZbKB91MTgcsvCzGw54M7timKeA",
-            BasePath = "https://analytics-7777.firebaseio.com/"
-        };
-
-        IFirebaseClient client;
-        #endregion
+       
 
 
         void Splash()
@@ -187,13 +178,7 @@ namespace AcroniUI
             (sender as Panel).BackColor = Color.FromArgb(255, (sender as Panel).BackColor.R, (sender as Panel).BackColor.G, (sender as Panel).BackColor.B);
         }
 
-        private string getActualMonth()
-        {
-            int nMes = DateTime.Today.Month;
-            string[] meses = new string[12] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho",
-            "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
-            return meses[nMes - 1];
-        }
+        
 
         private void btnAdicionarGaleria_Click(object sender, EventArgs e)
         {
@@ -256,7 +241,6 @@ namespace AcroniUI
                     Share.Keyboard.Name = "";
 
 
-                    DataAnalyticalSender();
 
                 }
 
@@ -269,68 +253,7 @@ namespace AcroniUI
             }
         }
 
-        private async void DataAnalyticalSender()
-        {
-            #region Relatório global Firebase
-            // Estratégia: apenas dar um patch nos dados existentes
-            // Pega-se o valor anterior e incrementa-o por mais um
-
-            // Gerando um cliente que será o objeto conexão usando a chave do banco
-            client = new FireSharp.FirebaseClient(config);
-
-
-            if (Share.User.isPremiumAccount)
-            {
-                FirebaseResponse responseGlobal = await client.
-                    GetAsync("/relatoriosGlobais/desktop");
-                GlobalData previousGlobal = responseGlobal.ResultAs<GlobalData>();
-
-
-                var relatorioGlobal = new GlobalData
-                {
-                    tecladosProduzidosPorUsuariosPremium = ++previousGlobal.tecladosProduzidosPorUsuariosPremium
-                };
-
-                await client.UpdateAsync("/relatoriosGlobais/desktop", relatorioGlobal);
-
-            }
-            #endregion
-
-            try
-            {
-                FirebaseResponse response = await client.
-                GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year);
-
-                try
-                {
-                    response = await client.GetAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth());
-                    MensalData previousMensal = response.ResultAs<MensalData>();
-                    var relatorioMensal = new MensalData
-                    {
-                        qntTecladosProduzidosPorMes = ++previousMensal.qntTecladosProduzidosPorMes
-                    };
-
-                    await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
-                }
-                catch (Exception)
-                {
-                    var mes = new Mes
-                    {
-                        mes = getActualMonth()
-                    };
-                    await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year, mes);
-                }
-            }
-            catch (Exception)
-            {
-                var ano = new Ano
-                {
-                    ano = DateTime.Today.Year
-                };
-                await client.UpdateAsync("/relatoriosMensais/desktop/", ano);
-            }
-
-        }
+        
 
         private void Exclude(object sender, EventArgs e)
         {
@@ -404,58 +327,65 @@ namespace AcroniUI
         bool canclose = false;
         public async void Edit(object sender, EventArgs e)
         {
-            if (!selectMode)
+            try
             {
-                if (canclose)
-                    selectColor.Close();
-                else
+                if (!selectMode)
                 {
-                    foreach (Control itemsGallery in (((sender as PictureBox).Parent as Panel)).Controls)
-                        if (itemsGallery.Name.Equals("lblColecao1"))
-                            selectColor = new SelectColor(itemsGallery.Text);
-                    selectColor.Show();
-                    canclose = true;
-                    while (selectColor.Visible)
+                    if (canclose)
+                        selectColor.Close();
+                    else
                     {
-                        await Task.Delay(10);
-                        if (selectColor.SettedColor != Color.Empty)
-                            ((sender as PictureBox).Parent as Panel).BackColor = selectColor.SettedColor;
-                    }
-                    if (selectColor.SettedColor != Color.Empty || !string.IsNullOrEmpty(selectColor.CollectionName))
-                    {
-                        foreach (Control c in ((sender as PictureBox).Parent as Panel).Controls)
+                        foreach (Control itemsGallery in (((sender as PictureBox).Parent as Panel)).Controls)
+                            if (itemsGallery.Name.Equals("lblColecao1"))
+                                selectColor = new SelectColor(itemsGallery.Text);
+                        selectColor.Show();
+                        canclose = true;
+                        while (selectColor.Visible)
                         {
-                            if (c.Name.Equals("lblColecao1"))
+                            await Task.Delay(10);
+                            if (selectColor.SettedColor != Color.Empty)
+                                ((sender as PictureBox).Parent as Panel).BackColor = selectColor.SettedColor;
+                        }
+                        if (selectColor.SettedColor != Color.Empty || !string.IsNullOrEmpty(selectColor.CollectionName))
+                        {
+                            foreach (Control c in ((sender as PictureBox).Parent as Panel).Controls)
                             {
-                                foreach (Collection collection in Share.User.UserCollections)
+                                if (c.Name.Equals("lblColecao1"))
                                 {
-                                    if (collection.CollectionName.Equals(c.Text))
+                                    foreach (Collection collection in Share.User.UserCollections)
                                     {
-                                        if (selectColor.SettedColor != Color.Empty)
-                                            collection.CollectionColor = selectColor.SettedColor;
-                                        if (!string.IsNullOrEmpty(selectColor.CollectionName))
+                                        if (collection.CollectionName.Equals(c.Text))
                                         {
-                                            List<Object> id = SQLProcMethods.SELECT_IdColecao(collection.CollectionName, Share.User.ID);
-                                            SQLProcMethods.UPDATE_Colecao(selectColor.CollectionName, Share.User.ID, (int)id[0]);
-                                            collection.CollectionName = selectColor.CollectionName;
+                                            if (selectColor.SettedColor != Color.Empty)
+                                                collection.CollectionColor = selectColor.SettedColor;
+                                            if (!string.IsNullOrEmpty(selectColor.CollectionName))
+                                            {
+                                                List<Object> id = SQLProcMethods.SELECT_IdColecao(collection.CollectionName, Share.User.ID);
+                                                SQLProcMethods.UPDATE_Colecao(selectColor.CollectionName, Share.User.ID, (int)id[0]);
+                                                collection.CollectionName = selectColor.CollectionName;
+                                            }
+                                            Share.User.SendToFile();
+                                            Galeria recharge = new Galeria(false);
+                                            recharge.Show();
+                                            this.Close();
+                                            break;
                                         }
-                                        Share.User.SendToFile();
-                                        Galeria recharge = new Galeria(false);
-                                        recharge.Show();
-                                        this.Close();
-                                        break;
                                     }
                                 }
                             }
+                            Share.User.SendToFile();
                         }
-                        Share.User.SendToFile();
                     }
                 }
+                else
+                {
+                    AcroniMessageBoxConfirm afa = new AcroniMessageBoxConfirm("Não podes editar a coleção agora", "Sinto muito, mas quando vai salvar o teclado, não há a possibilidade de customizar as coleções");
+                    afa.ShowDialog();
+                }
             }
-            else
+            catch (Exception)
             {
-                AcroniMessageBoxConfirm afa = new AcroniMessageBoxConfirm("Não podes editar a coleção agora", "Sinto muito, mas quando vai salvar o teclado, não há a possibilidade de customizar as coleções");
-                afa.ShowDialog();
+                if (selectColor != null) { selectColor.Close(); }
             }
         }
         protected override void btnClose_Click(object sender, EventArgs e)

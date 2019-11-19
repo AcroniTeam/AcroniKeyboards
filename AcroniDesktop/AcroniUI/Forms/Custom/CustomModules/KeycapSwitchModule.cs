@@ -16,13 +16,9 @@ namespace AcroniUI.Custom.CustomModules
     {
         public short chosenSwitch;
         private string keybuttonName;
-        private void VerifySwitch()
-        {
-            short Switch = 0;
-            foreach (Keycap c in Share.Keyboard.Keycaps)
-                if (c.ID.Equals(keybuttonName))
-                    Switch = c.Switch;
-            switch (Switch)
+        private void VerifySwitch(short switche)
+        {            
+            switch (switche)
             {
                 case 1:
                     picswitch1.Tag = "Chosen";
@@ -56,13 +52,13 @@ namespace AcroniUI.Custom.CustomModules
                     break;
 
             }
-            chosenSwitch = Switch;
+            chosenSwitch = switche;
         }
         public KeycapSwitchModule(string keybuttonName,short switche)
         {
             InitializeComponent();
             this.keybuttonName = keybuttonName;
-            VerifySwitch();
+            VerifySwitch(switche);
             Bunifu.Framework.UI.BunifuElipse e = new Bunifu.Framework.UI.BunifuElipse();
             foreach (Control c in this.Controls)
             {
@@ -152,15 +148,12 @@ namespace AcroniUI.Custom.CustomModules
 
         private void btnOnlyThis_Click(object sender, EventArgs e)
         {
-            foreach (Keycap c in Share.Keyboard.Keycaps)
-                if (c.ID.Equals(keybuttonName))
-                    c.Switch = chosenSwitch;
+            
         }
-
+        public bool allChosen = false;
         private void btnAll_Click(object sender, EventArgs e)
         {
-            foreach (Keycap c in Share.Keyboard.Keycaps)
-                c.Switch = chosenSwitch;
+            allChosen = true;
         }
     }
 }

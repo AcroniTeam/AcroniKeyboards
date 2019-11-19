@@ -136,7 +136,6 @@ namespace AcroniUI
             Galeria galeria = new Galeria(false);
             galeria.Show();
             this.Close();
-
         }
 
         protected virtual void btnSelectKeyboard_Click(object sender, EventArgs e)

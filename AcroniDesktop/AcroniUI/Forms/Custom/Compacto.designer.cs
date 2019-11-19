@@ -52,17 +52,16 @@ namespace AcroniUI.Custom
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblPrecoAtual = new System.Windows.Forms.Label();
+            this.lblPrecoOriginal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblPaintedKeycaps = new System.Windows.Forms.Label();
             this.apnlCustomOptionsLeft = new System.Windows.Forms.Panel();
+            this.btnRemoveIcons = new AcroniControls.StyleBtn();
             this.pnlBtnStyleFontColor = new System.Windows.Forms.Panel();
             this.cmbFontSize = new System.Windows.Forms.ComboBox();
             this.btnStyleFontColor = new AcroniControls.StyleBtn();
@@ -254,7 +253,8 @@ namespace AcroniUI.Custom
             this.ebtnOpenModuleTextIcons = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ebtnOpenModuleBackground = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ebtnOpenModuleTexture = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnRemoveIcons = new AcroniControls.StyleBtn();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             this.pnlCustomizingMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnTextAlignRight)).BeginInit();
@@ -352,7 +352,7 @@ namespace AcroniUI.Custom
             // 
             this.txtSelectFont.Location = new System.Drawing.Point(0, 0);
             this.txtSelectFont.Name = "txtSelectFont";
-            this.txtSelectFont.Size = new System.Drawing.Size(100, 20);
+            this.txtSelectFont.Size = new System.Drawing.Size(100, 22);
             this.txtSelectFont.TabIndex = 0;
             // 
             // pnlHistorico
@@ -393,7 +393,7 @@ namespace AcroniUI.Custom
             this.pnlCustomizingMenu.Controls.Add(this.btnVoltar);
             this.pnlCustomizingMenu.Controls.Add(this.btnSalvar);
             this.pnlCustomizingMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCustomizingMenu.Location = new System.Drawing.Point(0, 40);
+            this.pnlCustomizingMenu.Location = new System.Drawing.Point(0, 49);
             this.pnlCustomizingMenu.Name = "pnlCustomizingMenu";
             this.pnlCustomizingMenu.Size = new System.Drawing.Size(1280, 116);
             this.pnlCustomizingMenu.TabIndex = 16;
@@ -406,7 +406,7 @@ namespace AcroniUI.Custom
             this.lblKeyboardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Bold);
             this.lblKeyboardName.Location = new System.Drawing.Point(609, 35);
             this.lblKeyboardName.Name = "lblKeyboardName";
-            this.lblKeyboardName.Size = new System.Drawing.Size(256, 29);
+            this.lblKeyboardName.Size = new System.Drawing.Size(306, 33);
             this.lblKeyboardName.TabIndex = 15;
             this.lblKeyboardName.Text = "• <Nome do teclado>";
             // 
@@ -417,7 +417,7 @@ namespace AcroniUI.Custom
             this.lblCollectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(59)))));
             this.lblCollectionName.Location = new System.Drawing.Point(300, 35);
             this.lblCollectionName.Name = "lblCollectionName";
-            this.lblCollectionName.Size = new System.Drawing.Size(261, 29);
+            this.lblCollectionName.Size = new System.Drawing.Size(313, 33);
             this.lblCollectionName.TabIndex = 15;
             this.lblCollectionName.Text = "• <Nome da coleção>";
             // 
@@ -498,7 +498,7 @@ namespace AcroniUI.Custom
             this.lblDefinirParaTodasTeclas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.lblDefinirParaTodasTeclas.Location = new System.Drawing.Point(25, 128);
             this.lblDefinirParaTodasTeclas.Name = "lblDefinirParaTodasTeclas";
-            this.lblDefinirParaTodasTeclas.Size = new System.Drawing.Size(317, 17);
+            this.lblDefinirParaTodasTeclas.Size = new System.Drawing.Size(388, 22);
             this.lblDefinirParaTodasTeclas.TabIndex = 9;
             this.lblDefinirParaTodasTeclas.Text = "Definir fonte e estilos para todas as teclas";
             this.lblDefinirParaTodasTeclas.Click += new System.EventHandler(this.lblDefinirParaTodasTeclas_Click);
@@ -512,10 +512,10 @@ namespace AcroniUI.Custom
             this.cmbFontes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbFontes.ForeColor = System.Drawing.Color.Transparent;
             this.cmbFontes.FormattingEnabled = true;
-            this.cmbFontes.ItemHeight = 16;
+            this.cmbFontes.ItemHeight = 20;
             this.cmbFontes.Location = new System.Drawing.Point(23, 15);
             this.cmbFontes.Name = "cmbFontes";
-            this.cmbFontes.Size = new System.Drawing.Size(178, 24);
+            this.cmbFontes.Size = new System.Drawing.Size(178, 28);
             this.cmbFontes.TabIndex = 1;
             // 
             // apnlBottom
@@ -537,14 +537,12 @@ namespace AcroniUI.Custom
             this.apnlCustomOptionsRight.Controls.Add(this.label3);
             this.apnlCustomOptionsRight.Controls.Add(this.label5);
             this.apnlCustomOptionsRight.Controls.Add(this.label6);
-            this.apnlCustomOptionsRight.Controls.Add(this.label4);
             this.apnlCustomOptionsRight.Controls.Add(this.label21);
-            this.apnlCustomOptionsRight.Controls.Add(this.label9);
-            this.apnlCustomOptionsRight.Controls.Add(this.label20);
+            this.apnlCustomOptionsRight.Controls.Add(this.lblPrecoAtual);
+            this.apnlCustomOptionsRight.Controls.Add(this.lblPrecoOriginal);
             this.apnlCustomOptionsRight.Controls.Add(this.label8);
             this.apnlCustomOptionsRight.Controls.Add(this.label18);
             this.apnlCustomOptionsRight.Controls.Add(this.label17);
-            this.apnlCustomOptionsRight.Controls.Add(this.label16);
             this.apnlCustomOptionsRight.Controls.Add(this.label14);
             this.apnlCustomOptionsRight.Controls.Add(this.lblPaintedKeycaps);
             this.apnlCustomOptionsRight.Dock = System.Windows.Forms.DockStyle.Right;
@@ -560,10 +558,10 @@ namespace AcroniUI.Custom
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
-            this.label7.Location = new System.Drawing.Point(16, 45);
+            this.label7.Location = new System.Drawing.Point(28, 48);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 16);
+            this.label7.Size = new System.Drawing.Size(123, 20);
             this.label7.TabIndex = 11;
             this.label7.Text = "Fontes usadas: ";
             // 
@@ -576,7 +574,7 @@ namespace AcroniUI.Custom
             this.label3.Location = new System.Drawing.Point(16, 19);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 16);
+            this.label3.Size = new System.Drawing.Size(126, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Teclas coloridas:";
             // 
@@ -589,7 +587,7 @@ namespace AcroniUI.Custom
             this.label5.Location = new System.Drawing.Point(16, 97);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 16);
+            this.label5.Size = new System.Drawing.Size(172, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Ícones personalizados:";
             // 
@@ -602,56 +600,43 @@ namespace AcroniUI.Custom
             this.label6.Location = new System.Drawing.Point(16, 124);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 16);
+            this.label6.Size = new System.Drawing.Size(223, 20);
             this.label6.TabIndex = 9;
             this.label6.Text = "Plano de fundo personalizado:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
-            this.label4.Location = new System.Drawing.Point(16, 70);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Texturas personalizadas:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(249, 82);
+            this.label21.Location = new System.Drawing.Point(251, 80);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(111, 20);
+            this.label21.Size = new System.Drawing.Size(139, 25);
             this.label21.TabIndex = 9;
             this.label21.Text = "Preço atual:\r";
             // 
-            // label9
+            // lblPrecoAtual
             // 
-            this.label9.AutoSize = true;
-            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(245, 98);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(148, 31);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "R$ 284,98";
+            this.lblPrecoAtual.AutoSize = true;
+            this.lblPrecoAtual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPrecoAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
+            this.lblPrecoAtual.Location = new System.Drawing.Point(245, 109);
+            this.lblPrecoAtual.Name = "lblPrecoAtual";
+            this.lblPrecoAtual.Size = new System.Drawing.Size(157, 33);
+            this.lblPrecoAtual.TabIndex = 9;
+            this.lblPrecoAtual.Text = "R$ 225,00";
             // 
-            // label20
+            // lblPrecoOriginal
             // 
-            this.label20.AutoSize = true;
-            this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
-            this.label20.Location = new System.Drawing.Point(250, 48);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(93, 20);
-            this.label20.TabIndex = 9;
-            this.label20.Text = "R$ 249,99";
+            this.lblPrecoOriginal.AutoSize = true;
+            this.lblPrecoOriginal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPrecoOriginal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrecoOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
+            this.lblPrecoOriginal.Location = new System.Drawing.Point(255, 43);
+            this.lblPrecoOriginal.Name = "lblPrecoOriginal";
+            this.lblPrecoOriginal.Size = new System.Drawing.Size(120, 25);
+            this.lblPrecoOriginal.TabIndex = 9;
+            this.lblPrecoOriginal.Text = "R$ 225,00";
             // 
             // label8
             // 
@@ -659,9 +644,9 @@ namespace AcroniUI.Custom
             this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
-            this.label8.Location = new System.Drawing.Point(251, 33);
+            this.label8.Location = new System.Drawing.Point(256, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.Size = new System.Drawing.Size(114, 17);
             this.label8.TabIndex = 9;
             this.label8.Text = "Preço original:\r";
             // 
@@ -674,7 +659,7 @@ namespace AcroniUI.Custom
             this.label18.Location = new System.Drawing.Point(206, 124);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 16);
+            this.label18.Size = new System.Drawing.Size(38, 20);
             this.label18.TabIndex = 9;
             this.label18.Text = "Não";
             // 
@@ -687,22 +672,9 @@ namespace AcroniUI.Custom
             this.label17.Location = new System.Drawing.Point(161, 96);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 16);
+            this.label17.Size = new System.Drawing.Size(36, 20);
             this.label17.TabIndex = 9;
             this.label17.Text = "Sim";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(172, 70);
-            this.label16.Margin = new System.Windows.Forms.Padding(0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 16);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Não";
             // 
             // label14
             // 
@@ -710,10 +682,10 @@ namespace AcroniUI.Custom
             this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(115, 45);
+            this.label14.Location = new System.Drawing.Point(127, 48);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 16);
+            this.label14.Size = new System.Drawing.Size(89, 20);
             this.label14.TabIndex = 9;
             this.label14.Text = "Open Sans";
             // 
@@ -726,7 +698,7 @@ namespace AcroniUI.Custom
             this.lblPaintedKeycaps.Location = new System.Drawing.Point(127, 19);
             this.lblPaintedKeycaps.Margin = new System.Windows.Forms.Padding(0);
             this.lblPaintedKeycaps.Name = "lblPaintedKeycaps";
-            this.lblPaintedKeycaps.Size = new System.Drawing.Size(15, 16);
+            this.lblPaintedKeycaps.Size = new System.Drawing.Size(18, 20);
             this.lblPaintedKeycaps.TabIndex = 9;
             this.lblPaintedKeycaps.Text = "0";
             // 
@@ -751,6 +723,25 @@ namespace AcroniUI.Custom
             this.apnlCustomOptionsLeft.Size = new System.Drawing.Size(373, 157);
             this.apnlCustomOptionsLeft.TabIndex = 6;
             this.apnlCustomOptionsLeft.Click += new System.EventHandler(this.generalClicks);
+            // 
+            // btnRemoveIcons
+            // 
+            this.btnRemoveIcons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
+            this.btnRemoveIcons.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveIcons.FlatAppearance.BorderSize = 0;
+            this.btnRemoveIcons.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnRemoveIcons.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnRemoveIcons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveIcons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveIcons.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
+            this.btnRemoveIcons.Location = new System.Drawing.Point(28, 44);
+            this.btnRemoveIcons.Name = "btnRemoveIcons";
+            this.btnRemoveIcons.Size = new System.Drawing.Size(131, 34);
+            this.btnRemoveIcons.TabIndex = 16;
+            this.btnRemoveIcons.Tag = "disabled";
+            this.btnRemoveIcons.Text = "Remove icons";
+            this.btnRemoveIcons.UseVisualStyleBackColor = false;
+            this.btnRemoveIcons.Click += new System.EventHandler(this.btnRemoveIcons_Click);
             // 
             // pnlBtnStyleFontColor
             // 
@@ -782,7 +773,7 @@ namespace AcroniUI.Custom
             "16"});
             this.cmbFontSize.Location = new System.Drawing.Point(216, 15);
             this.cmbFontSize.Name = "cmbFontSize";
-            this.cmbFontSize.Size = new System.Drawing.Size(74, 24);
+            this.cmbFontSize.Size = new System.Drawing.Size(74, 28);
             this.cmbFontSize.TabIndex = 1;
             // 
             // btnStyleFontColor
@@ -1102,6 +1093,7 @@ namespace AcroniUI.Custom
             this.pnlChosenColor.Name = "pnlChosenColor";
             this.pnlChosenColor.Size = new System.Drawing.Size(67, 67);
             this.pnlChosenColor.TabIndex = 83;
+            this.pnlChosenColor.Click += new System.EventHandler(this.lblHexaColor_Click);
             // 
             // lblHexaColor
             // 
@@ -1110,10 +1102,11 @@ namespace AcroniUI.Custom
             this.lblHexaColor.ForeColor = System.Drawing.Color.White;
             this.lblHexaColor.Location = new System.Drawing.Point(162, 14);
             this.lblHexaColor.Name = "lblHexaColor";
-            this.lblHexaColor.Size = new System.Drawing.Size(113, 29);
+            this.lblHexaColor.Size = new System.Drawing.Size(136, 33);
             this.lblHexaColor.TabIndex = 84;
             this.lblHexaColor.Text = "#2196F3";
             this.lblHexaColor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblHexaColor.Click += new System.EventHandler(this.lblHexaColor_Click);
             // 
             // Vermelho
             // 
@@ -3249,25 +3242,6 @@ namespace AcroniUI.Custom
             this.ebtnOpenModuleTexture.ElipseRadius = 10;
             this.ebtnOpenModuleTexture.TargetControl = this.btnOpenModuleTexture;
             // 
-            // btnRemoveIcons
-            // 
-            this.btnRemoveIcons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
-            this.btnRemoveIcons.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemoveIcons.FlatAppearance.BorderSize = 0;
-            this.btnRemoveIcons.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnRemoveIcons.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnRemoveIcons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveIcons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveIcons.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
-            this.btnRemoveIcons.Location = new System.Drawing.Point(28, 44);
-            this.btnRemoveIcons.Name = "btnRemoveIcons";
-            this.btnRemoveIcons.Size = new System.Drawing.Size(131, 34);
-            this.btnRemoveIcons.TabIndex = 16;
-            this.btnRemoveIcons.Tag = "disabled";
-            this.btnRemoveIcons.Text = "Remove icons";
-            this.btnRemoveIcons.UseVisualStyleBackColor = false;
-            this.btnRemoveIcons.Click += new System.EventHandler(this.btnRemoveIcons_Click);
-            // 
             // Compacto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3289,6 +3263,8 @@ namespace AcroniUI.Custom
             this.Controls.SetChildIndex(this.apnlBottom, 0);
             this.Controls.SetChildIndex(this.pnlHeadColorpicker, 0);
             this.Controls.SetChildIndex(this.pnlArquivos, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             this.pnlCustomizingMenu.ResumeLayout(false);
             this.pnlCustomizingMenu.PerformLayout();
@@ -3427,8 +3403,7 @@ namespace AcroniUI.Custom
         private System.Windows.Forms.Panel apnlCustomOptionsRight;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPrecoAtual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
@@ -3437,16 +3412,14 @@ namespace AcroniUI.Custom
         private System.Windows.Forms.Panel apnlCustomOptionsLeft;
         private System.Windows.Forms.Label lblKeyboardName;
         private System.Windows.Forms.Label lblCollectionName;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblPaintedKeycaps;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuElipse ebtnOpenModuleTextIcons;
         private Bunifu.Framework.UI.BunifuElipse ebtnOpenModuleBackground;
 
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblPrecoOriginal;
         private System.Windows.Forms.ComboBox cmbFontSize;
         private System.Windows.Forms.Button Verde_claro;
         private System.Windows.Forms.Button Marrom;
@@ -3581,7 +3554,6 @@ namespace AcroniUI.Custom
         private System.Windows.Forms.Label lblCc14s;
         private System.Windows.Forms.Panel pnlBtnStyleFontColor;
         protected System.Windows.Forms.PictureBox picBoxKeyboardBackground;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel fundoCa15;
         private System.Windows.Forms.Label lblCa15;
@@ -3608,5 +3580,7 @@ namespace AcroniUI.Custom
         private System.Windows.Forms.Label lblCb14;
         private System.Windows.Forms.Label lblCd14s;
         private StyleBtn btnRemoveIcons;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label14;
     }
 }

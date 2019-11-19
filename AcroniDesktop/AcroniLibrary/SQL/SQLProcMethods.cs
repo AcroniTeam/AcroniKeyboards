@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using AcroniLibrary.FileInfo;
 using System.Data;
+using System.Data.Odbc;
 
 namespace AcroniLibrary.SQL
 {
@@ -78,7 +79,12 @@ namespace AcroniLibrary.SQL
         public static int UPDATE_ImgTecladoCustomizado(byte[] img, int id_cliente, String nickname_teclado)
         {
             image = img;
-            return DoInsertUpdateDelete($"EXEC usp_updImagemTecladoCustomizado @nova_imagem=@newimage,@id_cliente={id_cliente},@nickname_teclado='{nickname_teclado}'");
+            return DoInsertUpdateDelete($"EXEC usp_updImagemTecladoCustomizado @nova_imagem=@newimage, @id_cliente={id_cliente},@nickname_teclado='{nickname_teclado}'");
+        }
+
+        public static int UPDATE_PriceTecladoCustomizado(float preco, int id_cliente, String nickname_teclado)
+        {
+            return DoInsertUpdateDelete($"EXEC usp_updPrecoTecladoCustomizado @preco = {preco.ToString().Replace(",",".")}, @id_cliente={id_cliente},@nickname_teclado='{nickname_teclado}'");
         }
 
         public static int UPDATE_ImgColecao(byte[] img, int id_cliente, String nickname_colecao)
@@ -123,7 +129,7 @@ namespace AcroniLibrary.SQL
         public static int INSERT_TecladoCustomizado(int id_cli, byte[] img, String nickname_colecao, String nickname_teclado, Double preco)
         {
             image = img;
-            return DoInsertUpdateDelete($"EXEC usp_insTecladoCustomizado @id_cli={id_cli},@nickname_colecao='{nickname_colecao}',@nickname_teclado='{nickname_teclado}',@preco={preco},@imagem_teclado=@newimage");
+            return DoInsertUpdateDelete($"EXEC usp_insTecladoCustomizado @id_cli={id_cli},@nickname_colecao='{nickname_colecao}',@nickname_teclado='{nickname_teclado}',@preco={preco.ToString().Replace(",",".")},@imagem_teclado=@newimage");
         }
 
         public static int INSERT_Colecao(int id_cliente, String nickname_colecao, byte[] img)
@@ -255,11 +261,13 @@ namespace AcroniLibrary.SQL
                     {
                         if (newComm.CommandText.Contains("@newimage"))
                         {
-                            newComm.Parameters.AddWithValue("@newimage", image);
+                            SqlParameter p = new SqlParameter("@newimage", SqlDbType.Binary);
+                            p.Value = image;
+                            newComm.Parameters.Add(p);
                         }
                         ret = newComm.ExecuteNonQuery();
                     }
-                    catch (Exception e) { MessageBox.Show(e.Message); }
+                    catch (Exception e) { MessageBox.Show(e.Message);contTimesTried++; if (contTimesTried < 2) { DoInsertUpdateDelete(SQLCommand); } else contTimesTried = 0;  }
 
                 }
                 newConn.Close();
@@ -267,6 +275,7 @@ namespace AcroniLibrary.SQL
             }
             return ret;
         }
+        static int contTimesTried = 0;
         #endregion
 
     }

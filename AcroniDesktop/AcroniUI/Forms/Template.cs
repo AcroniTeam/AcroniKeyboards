@@ -193,5 +193,10 @@ namespace AcroniUI
                 btnMinimize.Location = new Point(this.Width - 33 - btnClose.Size.Width - btnMax.Width - btnMinimize.Width, 0);
             }
         }
+
+        private void btnMax_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -18,11 +18,18 @@ namespace AcroniControls
         List<int> rgb = new List<int>();
         int contRGB = 0;
         public string CollectionName;
-        public SelectColor(string collectionName)
+        public SelectColor(string collectionName,bool collection = true)
         {          
             InitializeComponent();
             CollectionName = collectionName;
             txtCollectionName.Text = collectionName;
+            if (!collection)
+            {
+                label4.Visible = false;
+                txtCollectionName.Visible = false;
+                label4.Enabled = false;
+                txtCollectionName.Enabled = false;
+            }
         }
 
         private void changeColor_Click(object sender, EventArgs e)
