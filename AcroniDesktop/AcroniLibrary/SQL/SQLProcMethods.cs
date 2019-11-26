@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.IO;
-using System.Text;
 using AcroniLibrary.FileInfo;
 using System.Data;
-using System.Data.Odbc;
 
 namespace AcroniLibrary.SQL
 {

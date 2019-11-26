@@ -4,14 +4,12 @@ using System.Net.Mail;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Threading;
-using AcroniLibrary;
 using AcroniLibrary.SQL;
 
 namespace AcroniUI.LoginAndSignUp
 {
-    
+
     public partial class FrmConfirmarEmail : Form
     {
         private void Start_SplashScreen()

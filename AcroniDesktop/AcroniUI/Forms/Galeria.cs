@@ -12,10 +12,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AcroniLibrary.FirebaseData;
-using FireSharp.Response;
-using FireSharp.Interfaces;
-using FireSharp.Config;
 
 
 namespace AcroniUI

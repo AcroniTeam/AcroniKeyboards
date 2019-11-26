@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 using AcroniLibrary;
 using System.Text.RegularExpressions;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;

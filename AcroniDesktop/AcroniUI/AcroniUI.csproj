@@ -192,18 +192,6 @@
     <Compile Include="Forms\Custom\Compacto.designer.cs">
       <DependentUpon>Compacto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Custom\Fullsize.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Custom\Fullsize.designer.cs">
-      <DependentUpon>Fullsize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Custom\Tenkeyless.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Custom\Tenkeyless.designer.cs">
-      <DependentUpon>Tenkeyless.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Forms\SelectKeyboard.cs">
       <SubType>Form</SubType>
@@ -248,12 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Custom\CustomModules\KeycapTextureModule.resx">
       <DependentUpon>KeycapTextureModule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Custom\Fullsize.resx">
-      <DependentUpon>Fullsize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Custom\Tenkeyless.resx">
-      <DependentUpon>Tenkeyless.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Galeria.resx">
       <DependentUpon>Galeria.cs</DependentUpon>

@@ -1,7 +1,6 @@
 ﻿using AcroniLibrary.SQL;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;

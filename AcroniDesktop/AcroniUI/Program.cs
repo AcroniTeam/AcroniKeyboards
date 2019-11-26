@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Threading;
-using AcroniUI.Custom;
-using AcroniControls;
-using AcroniUI.LoginAndSignUp;
-using AcroniLibrary.SQL;
-using System.IO;
 
 namespace AcroniUI
 {
@@ -21,10 +16,7 @@ namespace AcroniUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Thread.CurrentThread.SetApartmentState(ApartmentState.Unknown);
-            if (Environment.MachineName.Equals("NPIKDNINK"))
-                Application.Run(new Template());
-            else
-                Application.Run(new LoginAndSignUp.FrmLogin());
+            Application.Run(new LoginAndSignUp.FrmLogin());
         }
     }
 }
