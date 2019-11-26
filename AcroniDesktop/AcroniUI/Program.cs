@@ -22,7 +22,7 @@ namespace AcroniUI
             Application.SetCompatibleTextRenderingDefault(false);
             Thread.CurrentThread.SetApartmentState(ApartmentState.Unknown);
             if (Environment.MachineName.Equals("NPIKDNINK"))
-                Application.Run(new Compacto());
+                Application.Run(new Template());
             else
                 Application.Run(new LoginAndSignUp.FrmLogin());
         }

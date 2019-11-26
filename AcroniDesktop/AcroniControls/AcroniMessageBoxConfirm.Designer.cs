@@ -51,20 +51,20 @@
             // 
             this.alblMessage2.Font = new System.Drawing.Font("Open Sans", 12.5F);
             this.alblMessage2.ForeColor = System.Drawing.Color.White;
-            this.alblMessage2.Location = new System.Drawing.Point(50, 76);
+            this.alblMessage2.Location = new System.Drawing.Point(51, 100);
             this.alblMessage2.Name = "alblMessage2";
-            this.alblMessage2.Size = new System.Drawing.Size(416, 74);
+            this.alblMessage2.Size = new System.Drawing.Size(416, 42);
             this.alblMessage2.TabIndex = 0;
             this.alblMessage2.Text = "I dislike life as a experiente in general";
             this.alblMessage2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // alblMessage1
             // 
-            this.alblMessage1.Font = new System.Drawing.Font("Open Sans", 18.25F, System.Drawing.FontStyle.Bold);
+            this.alblMessage1.Font = new System.Drawing.Font("Open Sans", 17F, System.Drawing.FontStyle.Bold);
             this.alblMessage1.ForeColor = System.Drawing.Color.White;
             this.alblMessage1.Location = new System.Drawing.Point(0, 42);
             this.alblMessage1.Name = "alblMessage1";
-            this.alblMessage1.Size = new System.Drawing.Size(516, 34);
+            this.alblMessage1.Size = new System.Drawing.Size(516, 58);
             this.alblMessage1.TabIndex = 0;
             this.alblMessage1.Text = "What keeps you moving on?";
             this.alblMessage1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

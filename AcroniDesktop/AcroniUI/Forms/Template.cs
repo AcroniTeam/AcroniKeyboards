@@ -20,7 +20,7 @@ namespace AcroniUI
             ///
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(FormDrag.Form_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(FormDrag.Form_MouseMove);
-            
+
             #endregion
         }
 
@@ -45,8 +45,8 @@ namespace AcroniUI
         private void lblMenus_MouseLeave(object sender, EventArgs e)
         {
             //if (!((Label)sender).Tag.Equals("selected")) {
-                ((Label)sender).ForeColor = Color.White;
-                ((Label)sender).BackColor = Color.FromArgb(40, 42, 47);
+            ((Label)sender).ForeColor = Color.White;
+            ((Label)sender).BackColor = Color.FromArgb(40, 42, 47);
             //}
         }
         #endregion
@@ -78,7 +78,7 @@ namespace AcroniUI
         private void btnMinimize_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
         #endregion
-        
+
         #region Timers
         private void timerFade_Tick(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace AcroniUI
             }
         }
         #endregion
-       
+
 
         #region FadeIn e FadeOut
         public async void FadeOut()
@@ -173,7 +173,7 @@ namespace AcroniUI
 
         protected virtual void lblAbrir_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         protected virtual void btnMax_Click(object sender, EventArgs e)
@@ -192,11 +192,6 @@ namespace AcroniUI
                 btnMax.Location = new Point(this.Width - 33 - btnClose.Size.Width - btnMax.Width, 0);
                 btnMinimize.Location = new Point(this.Width - 33 - btnClose.Size.Width - btnMax.Width - btnMinimize.Width, 0);
             }
-        }
-
-        private void btnMax_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

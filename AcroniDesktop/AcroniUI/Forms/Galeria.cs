@@ -247,7 +247,7 @@ namespace AcroniUI
             }
             else
             {
-                AcroniMessageBoxConfirm mb = new AcroniMessageBoxConfirm("Sinto muito, mas você atingiu o limite de coleções que você " +
+                AcroniMessageBoxConfirm mb = new AcroniMessageBoxConfirm("Sinto muito, tu atingiu o limite de coleções que você " +
                                                        "pode criar usando essa conta.", "Atualize sua conta agora mesmo para uma conta Premium");
                 mb.ShowDialog();
             }

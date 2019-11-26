@@ -106,7 +106,7 @@ namespace AcroniUI.Custom
             this.Azul = new System.Windows.Forms.Button();
             this.Amarelo = new System.Windows.Forms.Button();
             this.Verde = new System.Windows.Forms.Button();
-            this.Ciano = new System.Windows.Forms.Button();
+            this.Azul_Marinho = new System.Windows.Forms.Button();
             this.Roxo = new System.Windows.Forms.Button();
             this.pnlWithKeycaps = new System.Windows.Forms.Panel();
             this.fundoCb14 = new System.Windows.Forms.Panel();
@@ -352,7 +352,7 @@ namespace AcroniUI.Custom
             // 
             this.txtSelectFont.Location = new System.Drawing.Point(0, 0);
             this.txtSelectFont.Name = "txtSelectFont";
-            this.txtSelectFont.Size = new System.Drawing.Size(100, 22);
+            this.txtSelectFont.Size = new System.Drawing.Size(100, 20);
             this.txtSelectFont.TabIndex = 0;
             // 
             // pnlHistorico
@@ -393,7 +393,7 @@ namespace AcroniUI.Custom
             this.pnlCustomizingMenu.Controls.Add(this.btnVoltar);
             this.pnlCustomizingMenu.Controls.Add(this.btnSalvar);
             this.pnlCustomizingMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlCustomizingMenu.Location = new System.Drawing.Point(0, 49);
+            this.pnlCustomizingMenu.Location = new System.Drawing.Point(0, 40);
             this.pnlCustomizingMenu.Name = "pnlCustomizingMenu";
             this.pnlCustomizingMenu.Size = new System.Drawing.Size(1280, 116);
             this.pnlCustomizingMenu.TabIndex = 16;
@@ -406,7 +406,7 @@ namespace AcroniUI.Custom
             this.lblKeyboardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Bold);
             this.lblKeyboardName.Location = new System.Drawing.Point(609, 35);
             this.lblKeyboardName.Name = "lblKeyboardName";
-            this.lblKeyboardName.Size = new System.Drawing.Size(306, 33);
+            this.lblKeyboardName.Size = new System.Drawing.Size(271, 30);
             this.lblKeyboardName.TabIndex = 15;
             this.lblKeyboardName.Text = "• <Nome do teclado>";
             // 
@@ -417,7 +417,7 @@ namespace AcroniUI.Custom
             this.lblCollectionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(59)))));
             this.lblCollectionName.Location = new System.Drawing.Point(300, 35);
             this.lblCollectionName.Name = "lblCollectionName";
-            this.lblCollectionName.Size = new System.Drawing.Size(313, 33);
+            this.lblCollectionName.Size = new System.Drawing.Size(277, 30);
             this.lblCollectionName.TabIndex = 15;
             this.lblCollectionName.Text = "• <Nome da coleção>";
             // 
@@ -498,7 +498,7 @@ namespace AcroniUI.Custom
             this.lblDefinirParaTodasTeclas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.lblDefinirParaTodasTeclas.Location = new System.Drawing.Point(25, 128);
             this.lblDefinirParaTodasTeclas.Name = "lblDefinirParaTodasTeclas";
-            this.lblDefinirParaTodasTeclas.Size = new System.Drawing.Size(388, 22);
+            this.lblDefinirParaTodasTeclas.Size = new System.Drawing.Size(349, 20);
             this.lblDefinirParaTodasTeclas.TabIndex = 9;
             this.lblDefinirParaTodasTeclas.Text = "Definir fonte e estilos para todas as teclas";
             this.lblDefinirParaTodasTeclas.Click += new System.EventHandler(this.lblDefinirParaTodasTeclas_Click);
@@ -512,10 +512,10 @@ namespace AcroniUI.Custom
             this.cmbFontes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbFontes.ForeColor = System.Drawing.Color.Transparent;
             this.cmbFontes.FormattingEnabled = true;
-            this.cmbFontes.ItemHeight = 20;
+            this.cmbFontes.ItemHeight = 18;
             this.cmbFontes.Location = new System.Drawing.Point(23, 15);
             this.cmbFontes.Name = "cmbFontes";
-            this.cmbFontes.Size = new System.Drawing.Size(178, 28);
+            this.cmbFontes.Size = new System.Drawing.Size(178, 26);
             this.cmbFontes.TabIndex = 1;
             // 
             // apnlBottom
@@ -561,7 +561,7 @@ namespace AcroniUI.Custom
             this.label7.Location = new System.Drawing.Point(28, 48);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 20);
+            this.label7.Size = new System.Drawing.Size(109, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Fontes usadas: ";
             // 
@@ -574,7 +574,7 @@ namespace AcroniUI.Custom
             this.label3.Location = new System.Drawing.Point(16, 19);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 20);
+            this.label3.Size = new System.Drawing.Size(115, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Teclas coloridas:";
             // 
@@ -587,7 +587,7 @@ namespace AcroniUI.Custom
             this.label5.Location = new System.Drawing.Point(16, 97);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(172, 20);
+            this.label5.Size = new System.Drawing.Size(153, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Ícones personalizados:";
             // 
@@ -600,7 +600,7 @@ namespace AcroniUI.Custom
             this.label6.Location = new System.Drawing.Point(16, 124);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(223, 20);
+            this.label6.Size = new System.Drawing.Size(201, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Plano de fundo personalizado:";
             // 
@@ -611,7 +611,7 @@ namespace AcroniUI.Custom
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
             this.label21.Location = new System.Drawing.Point(251, 80);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(139, 25);
+            this.label21.Size = new System.Drawing.Size(121, 24);
             this.label21.TabIndex = 9;
             this.label21.Text = "Preço atual:\r";
             // 
@@ -622,7 +622,7 @@ namespace AcroniUI.Custom
             this.lblPrecoAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
             this.lblPrecoAtual.Location = new System.Drawing.Point(245, 109);
             this.lblPrecoAtual.Name = "lblPrecoAtual";
-            this.lblPrecoAtual.Size = new System.Drawing.Size(157, 33);
+            this.lblPrecoAtual.Size = new System.Drawing.Size(139, 30);
             this.lblPrecoAtual.TabIndex = 9;
             this.lblPrecoAtual.Text = "R$ 225,00";
             // 
@@ -634,7 +634,7 @@ namespace AcroniUI.Custom
             this.lblPrecoOriginal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
             this.lblPrecoOriginal.Location = new System.Drawing.Point(255, 43);
             this.lblPrecoOriginal.Name = "lblPrecoOriginal";
-            this.lblPrecoOriginal.Size = new System.Drawing.Size(120, 25);
+            this.lblPrecoOriginal.Size = new System.Drawing.Size(102, 24);
             this.lblPrecoOriginal.TabIndex = 9;
             this.lblPrecoOriginal.Text = "R$ 225,00";
             // 
@@ -646,7 +646,7 @@ namespace AcroniUI.Custom
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(119)))), ((int)(((byte)(125)))));
             this.label8.Location = new System.Drawing.Point(256, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 17);
+            this.label8.Size = new System.Drawing.Size(109, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Preço original:\r";
             // 
@@ -659,7 +659,7 @@ namespace AcroniUI.Custom
             this.label18.Location = new System.Drawing.Point(206, 124);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 20);
+            this.label18.Size = new System.Drawing.Size(34, 17);
             this.label18.TabIndex = 9;
             this.label18.Text = "Não";
             // 
@@ -672,7 +672,7 @@ namespace AcroniUI.Custom
             this.label17.Location = new System.Drawing.Point(161, 96);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(36, 20);
+            this.label17.Size = new System.Drawing.Size(31, 17);
             this.label17.TabIndex = 9;
             this.label17.Text = "Sim";
             // 
@@ -685,7 +685,7 @@ namespace AcroniUI.Custom
             this.label14.Location = new System.Drawing.Point(127, 48);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 20);
+            this.label14.Size = new System.Drawing.Size(79, 17);
             this.label14.TabIndex = 9;
             this.label14.Text = "Open Sans";
             // 
@@ -698,7 +698,7 @@ namespace AcroniUI.Custom
             this.lblPaintedKeycaps.Location = new System.Drawing.Point(127, 19);
             this.lblPaintedKeycaps.Margin = new System.Windows.Forms.Padding(0);
             this.lblPaintedKeycaps.Name = "lblPaintedKeycaps";
-            this.lblPaintedKeycaps.Size = new System.Drawing.Size(18, 20);
+            this.lblPaintedKeycaps.Size = new System.Drawing.Size(16, 17);
             this.lblPaintedKeycaps.TabIndex = 9;
             this.lblPaintedKeycaps.Text = "0";
             // 
@@ -773,7 +773,7 @@ namespace AcroniUI.Custom
             "16"});
             this.cmbFontSize.Location = new System.Drawing.Point(216, 15);
             this.cmbFontSize.Name = "cmbFontSize";
-            this.cmbFontSize.Size = new System.Drawing.Size(74, 28);
+            this.cmbFontSize.Size = new System.Drawing.Size(74, 26);
             this.cmbFontSize.TabIndex = 1;
             // 
             // btnStyleFontColor
@@ -1102,7 +1102,7 @@ namespace AcroniUI.Custom
             this.lblHexaColor.ForeColor = System.Drawing.Color.White;
             this.lblHexaColor.Location = new System.Drawing.Point(162, 14);
             this.lblHexaColor.Name = "lblHexaColor";
-            this.lblHexaColor.Size = new System.Drawing.Size(136, 33);
+            this.lblHexaColor.Size = new System.Drawing.Size(120, 30);
             this.lblHexaColor.TabIndex = 84;
             this.lblHexaColor.Text = "#2196F3";
             this.lblHexaColor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1164,7 +1164,7 @@ namespace AcroniUI.Custom
             this.pnlBodyColorpicker.Controls.Add(this.Rosa);
             this.pnlBodyColorpicker.Controls.Add(this.Amarelo);
             this.pnlBodyColorpicker.Controls.Add(this.Verde);
-            this.pnlBodyColorpicker.Controls.Add(this.Ciano);
+            this.pnlBodyColorpicker.Controls.Add(this.Azul_Marinho);
             this.pnlBodyColorpicker.Controls.Add(this.Roxo);
             this.pnlBodyColorpicker.Controls.Add(this.Vermelho);
             this.pnlBodyColorpicker.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1241,7 +1241,7 @@ namespace AcroniUI.Custom
             this.Verde_claro.Name = "Verde_claro";
             this.Verde_claro.Size = new System.Drawing.Size(32, 32);
             this.Verde_claro.TabIndex = 114;
-            this.Verde_claro.Tag = "Azul_Acizentado";
+            this.Verde_claro.Tag = "Verde Lima";
             this.Verde_claro.UseVisualStyleBackColor = false;
             this.Verde_claro.Click += new System.EventHandler(this.btnColor_Click);
             this.Verde_claro.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1258,7 +1258,7 @@ namespace AcroniUI.Custom
             this.Laranja.Name = "Laranja";
             this.Laranja.Size = new System.Drawing.Size(32, 32);
             this.Laranja.TabIndex = 114;
-            this.Laranja.Tag = "Laranja Escuro";
+            this.Laranja.Tag = "Laranja";
             this.Laranja.UseVisualStyleBackColor = false;
             this.Laranja.Click += new System.EventHandler(this.btnColor_Click);
             this.Laranja.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1292,7 +1292,7 @@ namespace AcroniUI.Custom
             this.Teal.Name = "Teal";
             this.Teal.Size = new System.Drawing.Size(32, 32);
             this.Teal.TabIndex = 114;
-            this.Teal.Tag = "Verde Claro";
+            this.Teal.Tag = "Teal";
             this.Teal.UseVisualStyleBackColor = false;
             this.Teal.Click += new System.EventHandler(this.btnColor_Click);
             this.Teal.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1309,7 +1309,7 @@ namespace AcroniUI.Custom
             this.Azul_Claro.Name = "Azul_Claro";
             this.Azul_Claro.Size = new System.Drawing.Size(32, 32);
             this.Azul_Claro.TabIndex = 114;
-            this.Azul_Claro.Tag = "Azul_Claro";
+            this.Azul_Claro.Tag = "Azul claro";
             this.Azul_Claro.UseVisualStyleBackColor = false;
             this.Azul_Claro.Click += new System.EventHandler(this.btnColor_Click);
             this.Azul_Claro.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1343,7 +1343,7 @@ namespace AcroniUI.Custom
             this.Marrom.Name = "Marrom";
             this.Marrom.Size = new System.Drawing.Size(32, 32);
             this.Marrom.TabIndex = 114;
-            this.Marrom.Tag = "Cinza";
+            this.Marrom.Tag = "Marrom";
             this.Marrom.UseVisualStyleBackColor = false;
             this.Marrom.Click += new System.EventHandler(this.btnColor_Click);
             this.Marrom.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1360,7 +1360,7 @@ namespace AcroniUI.Custom
             this.Ambar.Name = "Ambar";
             this.Ambar.Size = new System.Drawing.Size(32, 32);
             this.Ambar.TabIndex = 114;
-            this.Ambar.Tag = "Laranja";
+            this.Ambar.Tag = "Âmbar";
             this.Ambar.UseVisualStyleBackColor = false;
             this.Ambar.Click += new System.EventHandler(this.btnColor_Click);
             this.Ambar.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1394,7 +1394,7 @@ namespace AcroniUI.Custom
             this.Lima.Name = "Lima";
             this.Lima.Size = new System.Drawing.Size(32, 32);
             this.Lima.TabIndex = 114;
-            this.Lima.Tag = "Amarelo";
+            this.Lima.Tag = "Lima";
             this.Lima.UseVisualStyleBackColor = false;
             this.Lima.Click += new System.EventHandler(this.btnColor_Click);
             this.Lima.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1411,7 +1411,7 @@ namespace AcroniUI.Custom
             this.Laranja_Escuro.Name = "Laranja_Escuro";
             this.Laranja_Escuro.Size = new System.Drawing.Size(32, 32);
             this.Laranja_Escuro.TabIndex = 114;
-            this.Laranja_Escuro.Tag = "Marrom";
+            this.Laranja_Escuro.Tag = "Laranja escuro";
             this.Laranja_Escuro.UseVisualStyleBackColor = false;
             this.Laranja_Escuro.Click += new System.EventHandler(this.btnColor_Click);
             this.Laranja_Escuro.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1445,7 +1445,7 @@ namespace AcroniUI.Custom
             this.Amarelo.Name = "Amarelo";
             this.Amarelo.Size = new System.Drawing.Size(32, 32);
             this.Amarelo.TabIndex = 114;
-            this.Amarelo.Tag = "Âmbar";
+            this.Amarelo.Tag = "Amarelo";
             this.Amarelo.UseVisualStyleBackColor = false;
             this.Amarelo.Click += new System.EventHandler(this.btnColor_Click);
             this.Amarelo.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
@@ -1468,22 +1468,22 @@ namespace AcroniUI.Custom
             this.Verde.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
             this.Verde.MouseLeave += new System.EventHandler(this.btnColor_MouseLeave);
             // 
-            // Ciano
+            // Azul_Marinho
             // 
-            this.Ciano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(212)))));
-            this.Ciano.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Ciano.FlatAppearance.BorderSize = 0;
-            this.Ciano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ciano.ForeColor = System.Drawing.Color.Transparent;
-            this.Ciano.Location = new System.Drawing.Point(162, 92);
-            this.Ciano.Name = "Ciano";
-            this.Ciano.Size = new System.Drawing.Size(32, 32);
-            this.Ciano.TabIndex = 114;
-            this.Ciano.Tag = "Ciano";
-            this.Ciano.UseVisualStyleBackColor = false;
-            this.Ciano.Click += new System.EventHandler(this.btnColor_Click);
-            this.Ciano.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
-            this.Ciano.MouseLeave += new System.EventHandler(this.btnColor_MouseLeave);
+            this.Azul_Marinho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(29)))), ((int)(((byte)(74)))));
+            this.Azul_Marinho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Azul_Marinho.FlatAppearance.BorderSize = 0;
+            this.Azul_Marinho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Azul_Marinho.ForeColor = System.Drawing.Color.Transparent;
+            this.Azul_Marinho.Location = new System.Drawing.Point(162, 92);
+            this.Azul_Marinho.Name = "Azul_Marinho";
+            this.Azul_Marinho.Size = new System.Drawing.Size(32, 32);
+            this.Azul_Marinho.TabIndex = 114;
+            this.Azul_Marinho.Tag = "Azul marinho";
+            this.Azul_Marinho.UseVisualStyleBackColor = false;
+            this.Azul_Marinho.Click += new System.EventHandler(this.btnColor_Click);
+            this.Azul_Marinho.MouseEnter += new System.EventHandler(this.btnColor_MouseEnter);
+            this.Azul_Marinho.MouseLeave += new System.EventHandler(this.btnColor_MouseLeave);
             // 
             // Roxo
             // 
@@ -3397,7 +3397,7 @@ namespace AcroniUI.Custom
         private System.Windows.Forms.Button Rosa;
         private System.Windows.Forms.Button Amarelo;
         private System.Windows.Forms.Button Verde;
-        private System.Windows.Forms.Button Ciano;
+        private System.Windows.Forms.Button Azul_Marinho;
         private System.Windows.Forms.Button Roxo;
         private System.Windows.Forms.Button Vermelho;
         private System.Windows.Forms.Panel apnlCustomOptionsRight;

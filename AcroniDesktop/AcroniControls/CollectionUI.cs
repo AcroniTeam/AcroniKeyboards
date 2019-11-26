@@ -1,15 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using AcroniLibrary.FileInfo;
 using AcroniLibrary.SQL;
-using AcroniLibrary.Drawing;
-using System.Drawing.Imaging;
 
 namespace AcroniControls
 {

@@ -93,16 +93,6 @@ namespace AcroniUI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maximize {
-            get {
-                object obj = ResourceManager.GetObject("maximize", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap olho {
             get {
                 object obj = ResourceManager.GetObject("olho", resourceCulture);
@@ -166,6 +156,16 @@ namespace AcroniUI.Properties {
         internal static System.Drawing.Bitmap tabarrowkeysred {
             get {
                 object obj = ResourceManager.GetObject("tabarrowkeysred", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wow {
+            get {
+                object obj = ResourceManager.GetObject("wow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -18,6 +18,7 @@ using FireSharp.Interfaces;
 using FireSharp.Config;
 using FireSharp.Response;
 using AcroniLibrary.FirebaseData;
+using System.Net;
 
 namespace AcroniUI.Custom
 {
@@ -34,6 +35,7 @@ namespace AcroniUI.Custom
 
         IFirebaseClient client;
         #endregion
+
         #region Declarações 
         double preco = 225;
         // Definição do botão de teclado genérico (kbtn)
@@ -1206,8 +1208,26 @@ namespace AcroniUI.Custom
         //        }
         //    }
         //}
+
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://google.com/generate_204"))
+                    return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private async void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (!CheckForInternetConnection())
+                (new MessageBoxSemInternet()).ShowDialog();
+
             bool canSave = false;
             if (!Share.User.isPremiumAccount)
                 if (!Share.EditKeyboard)

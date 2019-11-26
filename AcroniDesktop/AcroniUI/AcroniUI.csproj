@@ -119,7 +119,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFontResource.cs" />
     <Compile Include="Forms\CollectionSelected.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,11 +179,6 @@
     <Compile Include="Forms\MinhaConta.Designer.cs">
       <DependentUpon>MinhaConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TemplateMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +222,11 @@
     </Compile>
     <Compile Include="Forms\Template.Designer.cs">
       <DependentUpon>Template.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\CollectionSelected.resx">
       <DependentUpon>CollectionSelected.cs</DependentUpon>
@@ -273,6 +272,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectKeyboard.resx">
@@ -290,7 +290,7 @@
     <Content Include="Images\Botoes da fonte\center.png" />
     <Content Include="Images\Botoes da fonte\left.png" />
     <Content Include="Images\Botoes da fonte\right.png" />
-    <None Include="Resources\maximize.png" />
+    <Content Include="Images\wow.png" />
     <None Include="app.manifest" />
     <None Include="Images\checkmark.png" />
     <Content Include="Images\compacto.png" />
