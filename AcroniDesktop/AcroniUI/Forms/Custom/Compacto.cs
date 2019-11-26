@@ -1517,7 +1517,6 @@ namespace AcroniUI.Custom
                     {
                         qntTecladosProduzidosPorMes = ++previousMensal.qntTecladosProduzidosPorMes
                     };
-
                     await client.UpdateAsync("/relatoriosMensais/desktop/" + DateTime.Today.Year + "/" + getActualMonth(), relatorioMensal);
                 }
                 catch (Exception)

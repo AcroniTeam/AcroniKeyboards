@@ -76,10 +76,10 @@ namespace AcroniUI
                             Form editKeyboard = new Compacto();
                             if (userKeyboard.KeyboardType.Equals("Compacto"))
                                 editKeyboard = new Compacto();
-                            else if (userKeyboard.KeyboardType.Equals("Tenkeyless"))
-                                editKeyboard = new Tenkeyless();
-                            else if (userKeyboard.KeyboardType.Equals(("FullSize")))
-                                editKeyboard = new Fullsize();
+                            //else if (userKeyboard.KeyboardType.Equals("Tenkeyless"))
+                            //    editKeyboard = new Tenkeyless();
+                            //else if (userKeyboard.KeyboardType.Equals(("FullSize")))
+                            //    editKeyboard = new Fullsize();
                             editKeyboard.Show();
                             this.Close();
                         }

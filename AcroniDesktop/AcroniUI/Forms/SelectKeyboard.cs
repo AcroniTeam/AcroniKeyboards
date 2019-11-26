@@ -53,8 +53,8 @@ namespace AcroniUI
 
         private void picBoxOpenFullSize_Click(object sender, EventArgs e)
         {
-            Fullsize fullsize = new Fullsize();
-            fullsize.Show();
+            //Fullsize fullsize = new Fullsize();
+            //fullsize.Show();
             this.Close();
         }
 

@@ -111,3 +111,4 @@ C:\Users\Gabriel\Documents\GitHub\AcroniKeyboards\AcroniDesktop\AcroniControls\o
 C:\Users\Gabriel\Documents\GitHub\AcroniKeyboards\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.csproj.CopyComplete
 C:\Users\Gabriel\Documents\GitHub\AcroniKeyboards\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.dll
 C:\Users\Gabriel\Documents\GitHub\AcroniKeyboards\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.pdb
+C:\Users\Gabriel\Documents\GitHub\AcroniKeyboards\AcroniDesktop\AcroniControls\obj\Debug\AcroniControls.csprojAssemblyReference.cache

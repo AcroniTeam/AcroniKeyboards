@@ -56,11 +56,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AcroniControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AcroniControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AcroniControls\bin\x86\Debug\AcroniControls.dll</HintPath>
+      <HintPath>..\AcroniControls\bin\Debug\AcroniControls.dll</HintPath>
     </Reference>
-    <Reference Include="AcroniLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="AcroniLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AcroniLibrary\bin\Debug\AcroniLibrary.dll</HintPath>
     </Reference>
