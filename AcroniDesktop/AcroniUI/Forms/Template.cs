@@ -123,11 +123,6 @@ namespace AcroniUI
         {
             if (pnlArquivos.Visible == false)
             {
-                foreach (Control c in pnlArquivos.Controls)
-                {
-                    c.Text = "       " + c.Text;
-                    c.Size = new Size(pnlArquivos.Size.Width, (pnlArquivos.Size.Height) / 4);
-                }
                 pnlArquivos.Location = new Point(lblArquivo.Location.X, pnlSuperior.Location.Y + 40);
                 pnlArquivos.Visible = true;
             }
@@ -161,9 +156,7 @@ namespace AcroniUI
 
         protected virtual void lblNovo_Click(object sender, EventArgs e)
         {
-            AcroniMessageBoxConfirm mbc = new AcroniMessageBoxConfirm("Deseja salvar esse arquivo?");
-            if (mbc.ShowDialog() == DialogResult.OK)
-                lblSalvar_Click(sender, e);
+
         }
 
         protected virtual void lblSalvarComo_Click(object sender, EventArgs e)
@@ -193,5 +186,15 @@ namespace AcroniUI
                 btnMinimize.Location = new Point(this.Width - 33 - btnClose.Size.Width - btnMax.Width - btnMinimize.Width, 0);
             }
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.F))
+            {
+                MessageBox.Show("What the Ctrl+F?");
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
+

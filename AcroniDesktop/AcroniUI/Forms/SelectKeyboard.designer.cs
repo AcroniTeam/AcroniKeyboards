@@ -38,6 +38,9 @@
             this.picBoxOpenTenkeyless = new System.Windows.Forms.PictureBox();
             this.btnOpenFullSize = new System.Windows.Forms.Panel();
             this.lblFullSize = new System.Windows.Forms.Label();
+            this.pnlArquivos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             this.btnOpenCompacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCompacto)).BeginInit();
@@ -46,9 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxOpenTenkeyless)).BeginInit();
             this.btnOpenFullSize.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnMax
-            // 
             // 
             // btnOpenCompacto
             // 
@@ -68,11 +68,11 @@
             this.lblCompacto.BackColor = System.Drawing.Color.Transparent;
             this.lblCompacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompacto.ForeColor = System.Drawing.Color.White;
-            this.lblCompacto.Location = new System.Drawing.Point(355, 84);
+            this.lblCompacto.Location = new System.Drawing.Point(403, 80);
             this.lblCompacto.Name = "lblCompacto";
-            this.lblCompacto.Size = new System.Drawing.Size(256, 57);
+            this.lblCompacto.Size = new System.Drawing.Size(188, 57);
             this.lblCompacto.TabIndex = 5;
-            this.lblCompacto.Text = "Compacto";
+            this.lblCompacto.Text = "Padrão";
             this.lblCompacto.Click += new System.EventHandler(this.picBoxCompacto_Click);
             // 
             // picBoxCompacto
@@ -182,6 +182,10 @@
             this.Controls.SetChildIndex(this.btnOpenCompacto, 0);
             this.Controls.SetChildIndex(this.btnOpenTenkeyless, 0);
             this.Controls.SetChildIndex(this.btnOpenFullSize, 0);
+            this.pnlArquivos.ResumeLayout(false);
+            this.pnlArquivos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             this.btnOpenCompacto.ResumeLayout(false);
             this.btnOpenCompacto.PerformLayout();

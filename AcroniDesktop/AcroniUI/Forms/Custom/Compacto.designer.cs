@@ -253,6 +253,7 @@ namespace AcroniUI.Custom
             this.ebtnOpenModuleTextIcons = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ebtnOpenModuleBackground = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ebtnOpenModuleTexture = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.pnlArquivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
@@ -347,6 +348,18 @@ namespace AcroniUI.Custom
             // btnMax
             // 
             this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+            // 
+            // lblSalvar
+            // 
+            this.lblSalvar.Click += new System.EventHandler(this.lblSalvar_Click_1);
+            // 
+            // lblNovo
+            // 
+            this.lblNovo.Click += new System.EventHandler(this.lblNovo_Click_1);
+            // 
+            // lblAbrir
+            // 
+            this.lblAbrir.Click += new System.EventHandler(this.lblAbrir_Click_1);
             // 
             // txtSelectFont
             // 
@@ -3263,6 +3276,8 @@ namespace AcroniUI.Custom
             this.Controls.SetChildIndex(this.apnlBottom, 0);
             this.Controls.SetChildIndex(this.pnlHeadColorpicker, 0);
             this.Controls.SetChildIndex(this.pnlArquivos, 0);
+            this.pnlArquivos.ResumeLayout(false);
+            this.pnlArquivos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();

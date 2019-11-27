@@ -1340,7 +1340,9 @@ namespace AcroniUI.Custom
             keyboard.BackgroundImage = picBoxKeyboardBackground.Image;
             keyboard.BackgroundColor = picBoxKeyboardBackground.BackColor;
             keyboard.BackgroundModeSize = picBoxKeyboardBackground.SizeMode;
-            keyboard.KeyboardImage = Screenshot.TakeSnapshot(picBoxKeyboardBackground, pnlWithKeycaps);
+            // FATHER STRETCH MY HANDS
+            // keyboard.KeyboardImage = Screenshot.TakeSnapshot(picBoxKeyboardBackground);
+            keyboard.KeyboardImage = Screenshot.TakeSnapshot(pnlWithKeycaps);
             string text = "";
             Color backcolor = Color.Empty;
             Color forecolor = Color.Empty;
@@ -1412,7 +1414,7 @@ namespace AcroniUI.Custom
         private void ExportToWebSite()
         {
             bool alreadyExistsThisKeyboard = false;
-            byte[] img = (Byte[])new ImageConverter().ConvertTo(Screenshot.TakeSnapshot(pnlWithKeycaps, picBoxKeyboardBackground), typeof(Byte[]));
+            byte[] img = (Byte[])new ImageConverter().ConvertTo(Screenshot.TakeSnapshot(pnlWithKeycaps), typeof(Byte[]));
 
             try
             {
@@ -1563,6 +1565,34 @@ namespace AcroniUI.Custom
             
         }
 
-      
+        private void lblNovo_Click_1(object sender, EventArgs e)
+        {
+            AcroniMessageBoxConfirm ambc = new AcroniMessageBoxConfirm("Você tem certeza disso?", "Teclados não salvos serão deletados :O");
+
+            if (ambc.ShowDialog() == DialogResult.Yes)
+            {
+                Compacto compacto = new Compacto();
+                compacto.Show();
+                this.Close();
+            }
+            else
+            {
+                SelectKeyboard sk = new SelectKeyboard();
+                sk.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void lblAbrir_Click_1(object sender, EventArgs e)
+        {
+            Galeria galeria = new Galeria(false);
+            galeria.Show();
+            this.Close();
+        }
+
+        private void lblSalvar_Click_1(object sender, EventArgs e)
+        {
+            btnSalvar_Click(sender, e);
+        }
     }
 }

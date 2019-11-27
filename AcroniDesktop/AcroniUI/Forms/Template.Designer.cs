@@ -123,7 +123,7 @@
             this.lblAcroni.ForeColor = System.Drawing.Color.White;
             this.lblAcroni.Location = new System.Drawing.Point(9, 6);
             this.lblAcroni.Name = "lblAcroni";
-            this.lblAcroni.Size = new System.Drawing.Size(84, 30);
+            this.lblAcroni.Size = new System.Drawing.Size(88, 32);
             this.lblAcroni.TabIndex = 2;
             this.lblAcroni.Text = "Acroni";
             // 
@@ -139,7 +139,7 @@
             this.pnlArquivos.Controls.Add(this.lblAbrir);
             this.pnlArquivos.Location = new System.Drawing.Point(108, 35);
             this.pnlArquivos.Name = "pnlArquivos";
-            this.pnlArquivos.Size = new System.Drawing.Size(302, 91);
+            this.pnlArquivos.Size = new System.Drawing.Size(247, 91);
             this.pnlArquivos.TabIndex = 16;
             this.pnlArquivos.Visible = false;
             // 
@@ -153,9 +153,9 @@
             this.lblSalvar.Location = new System.Drawing.Point(12, 63);
             this.lblSalvar.Name = "lblSalvar";
             this.lblSalvar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalvar.Size = new System.Drawing.Size(252, 23);
+            this.lblSalvar.Size = new System.Drawing.Size(227, 22);
             this.lblSalvar.TabIndex = 19;
-            this.lblSalvar.Text = "Salvar                                 Ctrl + S";
+            this.lblSalvar.Text = "Salvar                            Ctrl + S";
             this.lblSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblSalvar.Click += new System.EventHandler(this.lblSalvar_Click);
             this.lblSalvar.MouseLeave += new System.EventHandler(this.scroll_leave);
@@ -170,9 +170,9 @@
             this.lblNovo.ForeColor = System.Drawing.Color.White;
             this.lblNovo.Location = new System.Drawing.Point(12, 3);
             this.lblNovo.Name = "lblNovo";
-            this.lblNovo.Size = new System.Drawing.Size(259, 23);
+            this.lblNovo.Size = new System.Drawing.Size(231, 22);
             this.lblNovo.TabIndex = 18;
-            this.lblNovo.Text = "Novo                                   Ctrl + N";
+            this.lblNovo.Text = "Novo                              Ctrl + N";
             this.lblNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNovo.Click += new System.EventHandler(this.lblNovo_Click);
             this.lblNovo.MouseLeave += new System.EventHandler(this.scroll_leave);
@@ -187,9 +187,9 @@
             this.lblAbrir.ForeColor = System.Drawing.Color.White;
             this.lblAbrir.Location = new System.Drawing.Point(12, 33);
             this.lblAbrir.Name = "lblAbrir";
-            this.lblAbrir.Size = new System.Drawing.Size(257, 23);
+            this.lblAbrir.Size = new System.Drawing.Size(229, 22);
             this.lblAbrir.TabIndex = 17;
-            this.lblAbrir.Text = "Abrir                                   Ctrl + O";
+            this.lblAbrir.Text = "Abrir                              Ctrl + O";
             this.lblAbrir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAbrir.Click += new System.EventHandler(this.lblAbrir_Click);
             this.lblAbrir.MouseLeave += new System.EventHandler(this.scroll_leave);
