@@ -208,8 +208,6 @@ C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\Acro
 C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Custom.CustomModules.KeycapSwitchModule.resources
 C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Custom.CustomModules.KeycapTextIconModule.resources
 C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Custom.CustomModules.KeycapTextureModule.resources
-C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Custom.Fullsize.resources
-C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Custom.Tenkeyless.resources
 C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.Galeria.resources
 C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.LoginAndSignUp.FrmConfirmarEmail.resources
 C:\Users\iwakura\Documents\AcroniKeyboards\AcroniDesktop\AcroniUI\obj\Debug\AcroniUI.LoginAndSignUp.FrmLogin.resources

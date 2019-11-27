@@ -120,9 +120,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnMax.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAFRJREFUOE+tizEKQDEUwnr/S79ahwwO8vltIJBB11zw7Hz6q4YQOWgaQuSgaQiR
-        g6YhRA6ahhA5aBpC5KBpCJGDpiFEDpqGEDloGkLkoGmIP1ycZzbB+ggj20uADQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABMAAAAVCAYAAACkCdXRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGFJREFUOE/ljLEJxEAAw7L/0henEciVn08XgQqB8XVe5KNnT/8qKEIPF0ERergI
+        itDDRVCEHi6CIvRwERShh4ugCD1cBEXo4SIoQg8XQRF6uAiK0MNFUIQeLoLiXz5xds4NMLeNuWzaE/0A
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

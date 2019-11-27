@@ -144,7 +144,7 @@ namespace AcroniUI
         private void scroll_move(object sender, MouseEventArgs e)
         {
             Label itemMenuStrip = (Label)sender;
-            itemMenuStrip.BackColor = Color.FromArgb(158, 158, 158);
+            itemMenuStrip.BackColor = Color.FromArgb(75, 76, 79);
         }
 
         private void scroll_leave(object sender, EventArgs e)

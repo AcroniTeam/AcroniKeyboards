@@ -16,7 +16,7 @@ namespace AcroniUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Thread.CurrentThread.SetApartmentState(ApartmentState.Unknown);
-            Application.Run(new LoginAndSignUp.FrmLogin());
+            Application.Run(new AcroniUI.Template());
         }
     }
 }

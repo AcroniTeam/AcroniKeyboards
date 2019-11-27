@@ -1225,40 +1225,42 @@ namespace AcroniUI.Custom
         {
             if (!CheckForInternetConnection())
                 (new MessageBoxSemInternet()).ShowDialog();
-
-            bool canSave = false;
-            if (!Share.User.isPremiumAccount)
-                if (!Share.EditKeyboard)
-                {
-                    if (Share.User.KeyboardQuantity == 5)
+            else
+            {
+                bool canSave = false;
+                if (!Share.User.isPremiumAccount)
+                    if (!Share.EditKeyboard)
                     {
-                        AcroniMessageBoxConfirm mb = new AcroniMessageBoxConfirm("Sinto muito, mas você atingiu o limite de teclados que você " +
-                                        "pode criar usando essa conta.", "Atualize sua conta agora mesmo para uma conta Premium");
-                        mb.ShowDialog();
+                        if (Share.User.KeyboardQuantity == 5)
+                        {
+                            AcroniMessageBoxConfirm mb = new AcroniMessageBoxConfirm("Sinto muito, mas você atingiu o limite de teclados que você " +
+                                            "pode criar usando essa conta.", "Atualize sua conta agora mesmo para uma conta Premium");
+                            mb.ShowDialog();
+                        }
+                        else
+                        {
+                            canSave = true;
+                        }
                     }
                     else
                     {
                         canSave = true;
                     }
-                }
                 else
-                {
                     canSave = true;
-                }
-            else
-                canSave = true;
-            if (canSave)
-            {
-                if (!Share.EditKeyboard)
+                if (canSave)
                 {
-                    AcroniMessageBoxInput keyboardName = new AcroniMessageBoxInput("Insira o nome de seu teclado");
-                    keyboardName.ShowDialog();
-                    while (keyboardName.Visible)
+                    if (!Share.EditKeyboard)
                     {
-                        await Task.Delay(100);
+                        AcroniMessageBoxInput keyboardName = new AcroniMessageBoxInput("Insira o nome de seu teclado");
+                        keyboardName.ShowDialog();
+                        while (keyboardName.Visible)
+                        {
+                            await Task.Delay(100);
+                        }
                     }
+                    SaveKeyboard();
                 }
-                SaveKeyboard();
             }
         }
 

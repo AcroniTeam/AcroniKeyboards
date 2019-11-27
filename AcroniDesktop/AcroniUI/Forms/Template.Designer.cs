@@ -38,7 +38,6 @@
             this.lblAcroni = new System.Windows.Forms.Label();
             this.timerFade = new System.Windows.Forms.Timer(this.components);
             this.pnlArquivos = new System.Windows.Forms.Panel();
-            this.lblSalvarComo = new System.Windows.Forms.Label();
             this.lblSalvar = new System.Windows.Forms.Label();
             this.lblNovo = new System.Windows.Forms.Label();
             this.lblAbrir = new System.Windows.Forms.Label();
@@ -71,7 +70,7 @@
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
             this.btnMax.Location = new System.Drawing.Point(1139, 0);
             this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(42, 30);
+            this.btnMax.Size = new System.Drawing.Size(48, 30);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnMax.TabIndex = 15;
             this.btnMax.TabStop = false;
@@ -80,7 +79,7 @@
             // lblArquivo
             // 
             this.lblArquivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblArquivo.Font = new System.Drawing.Font("Open Sans", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArquivo.ForeColor = System.Drawing.Color.White;
             this.lblArquivo.Location = new System.Drawing.Point(108, 5);
             this.lblArquivo.Name = "lblArquivo";
@@ -120,11 +119,11 @@
             // lblAcroni
             // 
             this.lblAcroni.AutoSize = true;
-            this.lblAcroni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lblAcroni.Font = new System.Drawing.Font("Qanelas ExtraBold", 16.30189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcroni.ForeColor = System.Drawing.Color.White;
             this.lblAcroni.Location = new System.Drawing.Point(9, 6);
             this.lblAcroni.Name = "lblAcroni";
-            this.lblAcroni.Size = new System.Drawing.Size(87, 29);
+            this.lblAcroni.Size = new System.Drawing.Size(84, 30);
             this.lblAcroni.TabIndex = 2;
             this.lblAcroni.Text = "Acroni";
             // 
@@ -135,45 +134,28 @@
             // pnlArquivos
             // 
             this.pnlArquivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(47)))));
-            this.pnlArquivos.Controls.Add(this.lblSalvarComo);
             this.pnlArquivos.Controls.Add(this.lblSalvar);
             this.pnlArquivos.Controls.Add(this.lblNovo);
             this.pnlArquivos.Controls.Add(this.lblAbrir);
             this.pnlArquivos.Location = new System.Drawing.Point(108, 35);
             this.pnlArquivos.Name = "pnlArquivos";
-            this.pnlArquivos.Size = new System.Drawing.Size(276, 120);
+            this.pnlArquivos.Size = new System.Drawing.Size(302, 91);
             this.pnlArquivos.TabIndex = 16;
             this.pnlArquivos.Visible = false;
             // 
-            // lblSalvarComo
-            // 
-            this.lblSalvarComo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(47)))));
-            this.lblSalvarComo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalvarComo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblSalvarComo.ForeColor = System.Drawing.Color.White;
-            this.lblSalvarComo.Location = new System.Drawing.Point(0, 90);
-            this.lblSalvarComo.Name = "lblSalvarComo";
-            this.lblSalvarComo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalvarComo.Size = new System.Drawing.Size(276, 30);
-            this.lblSalvarComo.TabIndex = 20;
-            this.lblSalvarComo.Text = "Salvar como...      Ctrl + Shift + S";
-            this.lblSalvarComo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSalvarComo.Click += new System.EventHandler(this.lblSalvarComo_Click);
-            this.lblSalvarComo.MouseLeave += new System.EventHandler(this.scroll_leave);
-            this.lblSalvarComo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.scroll_move);
-            // 
             // lblSalvar
             // 
+            this.lblSalvar.AutoSize = true;
             this.lblSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(47)))));
             this.lblSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblSalvar.Font = new System.Drawing.Font("Open Sans", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalvar.ForeColor = System.Drawing.Color.White;
-            this.lblSalvar.Location = new System.Drawing.Point(0, 60);
+            this.lblSalvar.Location = new System.Drawing.Point(12, 63);
             this.lblSalvar.Name = "lblSalvar";
             this.lblSalvar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalvar.Size = new System.Drawing.Size(276, 30);
+            this.lblSalvar.Size = new System.Drawing.Size(252, 23);
             this.lblSalvar.TabIndex = 19;
-            this.lblSalvar.Text = "Salvar                                Ctrl + S";
+            this.lblSalvar.Text = "Salvar                                 Ctrl + S";
             this.lblSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblSalvar.Click += new System.EventHandler(this.lblSalvar_Click);
             this.lblSalvar.MouseLeave += new System.EventHandler(this.scroll_leave);
@@ -181,15 +163,16 @@
             // 
             // lblNovo
             // 
+            this.lblNovo.AutoSize = true;
             this.lblNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(47)))));
             this.lblNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNovo.Font = new System.Drawing.Font("Open Sans", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNovo.ForeColor = System.Drawing.Color.White;
-            this.lblNovo.Location = new System.Drawing.Point(0, 0);
+            this.lblNovo.Location = new System.Drawing.Point(12, 3);
             this.lblNovo.Name = "lblNovo";
-            this.lblNovo.Size = new System.Drawing.Size(276, 30);
+            this.lblNovo.Size = new System.Drawing.Size(259, 23);
             this.lblNovo.TabIndex = 18;
-            this.lblNovo.Text = "Novo                                  Ctrl + N";
+            this.lblNovo.Text = "Novo                                   Ctrl + N";
             this.lblNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNovo.Click += new System.EventHandler(this.lblNovo_Click);
             this.lblNovo.MouseLeave += new System.EventHandler(this.scroll_leave);
@@ -197,13 +180,14 @@
             // 
             // lblAbrir
             // 
+            this.lblAbrir.AutoSize = true;
             this.lblAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(47)))));
             this.lblAbrir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAbrir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblAbrir.Font = new System.Drawing.Font("Open Sans", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbrir.ForeColor = System.Drawing.Color.White;
-            this.lblAbrir.Location = new System.Drawing.Point(0, 30);
+            this.lblAbrir.Location = new System.Drawing.Point(12, 33);
             this.lblAbrir.Name = "lblAbrir";
-            this.lblAbrir.Size = new System.Drawing.Size(276, 30);
+            this.lblAbrir.Size = new System.Drawing.Size(257, 23);
             this.lblAbrir.TabIndex = 17;
             this.lblAbrir.Text = "Abrir                                   Ctrl + O";
             this.lblAbrir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             this.pnlArquivos.ResumeLayout(false);
+            this.pnlArquivos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,14 +226,13 @@
         protected System.Windows.Forms.Label lblAcroni;
         private System.Windows.Forms.Timer timerFade;
         private System.Windows.Forms.Panel pnlSuperior;
-        private System.Windows.Forms.Label lblSalvarComo;
-        private System.Windows.Forms.Label lblSalvar;
-        private System.Windows.Forms.Label lblNovo;
-        private System.Windows.Forms.Label lblAbrir;
         protected System.Windows.Forms.Panel pnlArquivos;
         protected System.Windows.Forms.PictureBox btnClose;
         protected System.Windows.Forms.PictureBox btnMinimize;
         protected System.Windows.Forms.PictureBox btnMax;
         protected System.Windows.Forms.Label lblArquivo;
+        protected System.Windows.Forms.Label lblSalvar;
+        protected System.Windows.Forms.Label lblNovo;
+        protected System.Windows.Forms.Label lblAbrir;
     }
 }
